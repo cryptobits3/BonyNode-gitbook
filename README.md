@@ -3,7 +3,7 @@ cover: .gitbook/assets/worldmap.jpg
 coverY: 0
 ---
 
-# 👋 BonyNode
+# 💚 Supported Chains
 
 {% hint style="info" %}
 **About this template:** An Internal Wiki to lay out everything anyone needs to know about the company, help others get to know your team, product or company better..

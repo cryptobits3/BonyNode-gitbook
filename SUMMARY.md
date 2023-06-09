@@ -1,24 +1,54 @@
 # Table of contents
 
-* [👋 BonyNode](README.md)
+* [💚 Supported Chains](README.md)
+* [👽 Explorers network](explorers-network.md)
 
-## About us
+## Mainnet
 
-* [🚀 Vision, Mission & Focus](about-us/vision-mission-and-focus/README.md)
-  * [Vision](about-us/vision-mission-and-focus/vision.md)
-  * [Mission](about-us/vision-mission-and-focus/mission.md)
-  * [Focus](about-us/vision-mission-and-focus/focus.md)
-* [💖 Values](about-us/values.md)
+* [💫 Soon](mainnet/soon.md)
+* [💫 Soon](mainnet/soon-1.md)
+* [💫 Soon](mainnet/soon-2.md)
 
-## Team
+## Testnet
 
-* [👋 Meet the Team!](team/meet-the-team.md)
+* [🚀 ANDROMEDA](testnet/andromeda/README.md)
+  * [Installation](testnet/andromeda/installation.md)
+  * [Upgrade](testnet/andromeda/upgrade.md)
+  * [Snapshot](testnet/andromeda/snapshot.md)
+  * [State sync](testnet/andromeda/state-sync.md)
+  * [Useful commands](testnet/andromeda/useful-commands.md)
+* [🚀 ARCHWAY](testnet/archway/README.md)
+  * [Installation](testnet/archway/installation.md)
+  * [Upgrade](testnet/archway/upgrade.md)
+  * [Snapshot](testnet/archway/snapshot.md)
+  * [State sync](testnet/archway/state-sync.md)
+  * [Useful commands](testnet/archway/useful-commands.md)
+* [🚀 BABYLON](testnet/babylon.md)
+* [🚀 CARDCHAIN](testnet/cardchain.md)
+* [🚀 CASCADIA](testnet/cascadia.md)
+* [🚀 CELESTIA](testnet/celestia.md)
+* [🚀 COMPOSABLE](testnet/composable.md)
+* [🚀 DEFUND](testnet/defund.md)
+* [🚀 DYMENSION](testnet/dymension.md)
+* [🚀 EMPOWER](testnet/empower.md)
+* [🚀 HYPERSIGN](testnet/hypersign.md)
+* [🚀 LAVA](testnet/lava.md)
+* [🚀 OJO](testnet/ojo.md)
+* [🚀 OLLO](testnet/ollo.md)
+* [🚀 SAO](testnet/sao.md)
+* [🚀 TIMPI](testnet/timpi.md)
 
-## Collaborating
+***
 
-* [🤝 How we Work Together](collaborating/how-we-work-together.md)
-* [📅 Meetings](collaborating/meetings.md)
+* [🧩 GEAR PROTOCOL](gear-protocol.md)
+* [🧩 MUON](muon.md)
+* [🧩 MASSA](massa.md)
+* [🧩 SHARDEUM](shardeum.md)
+* [🧩 SUBSPACE](subspace.md)
+* [🧩 STARKNET](starknet.md)
+* [🧩 TAIKO](taiko.md)
 
-## Policies
+## Team BonyNode
 
-* [🌴 Requesting Time Off](policies/requesting-time-off.md)
+* [🟩 Untitled](team-bonynode/untitled.md)
+* [🟢 Untitled](team-bonynode/untitled-1.md)
