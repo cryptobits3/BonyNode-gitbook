@@ -1,23 +1,26 @@
 # Table of contents
 
 * [💚 Supported Chains](README.md)
-* [👽 Explorers network](explorers-network.md)
+* [💸 Supported IBC Relayers](supported-ibc-relayers.md)
+* [👽 Explorers Chains](explorers-chains.md)
+* [🧙♀ Monitoring Tools](monitoring-tools.md)
+* [🏝 Governance Proposals Bots](governance-proposals-bots.md)
 
 ## Mainnet
 
-* [💫 Soon](mainnet/soon.md)
+* [💫 Soon](team/meet-the-team.md)
 * [💫 Soon](mainnet/soon-1.md)
 * [💫 Soon](mainnet/soon-2.md)
 
 ## Testnet
 
-* [🚀 ANDROMEDA](testnet/andromeda/README.md)
+* [🚀 ANDROMEDA](collaborating/how-we-work-together.md)
   * [Installation](testnet/andromeda/installation.md)
   * [Upgrade](testnet/andromeda/upgrade.md)
   * [Snapshot](testnet/andromeda/snapshot.md)
   * [State sync](testnet/andromeda/state-sync.md)
   * [Useful commands](testnet/andromeda/useful-commands.md)
-* [🚀 ARCHWAY](testnet/archway/README.md)
+* [🚀 ARCHWAY](collaborating/meetings.md)
   * [Installation](testnet/archway/installation.md)
   * [Upgrade](testnet/archway/upgrade.md)
   * [Snapshot](testnet/archway/snapshot.md)
@@ -50,5 +53,5 @@
 
 ## Team BonyNode
 
-* [🟩 Untitled](team-bonynode/untitled.md)
-* [🟢 Untitled](team-bonynode/untitled-1.md)
+* [🟩 About Team](team-bonynode/about-team.md)
+* [🟢 Сommunity Network](team-bonynode/sommunity-network.md)
