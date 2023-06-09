@@ -8,9 +8,9 @@
 
 ## Mainnet
 
-* [💫 Soon](team/meet-the-team.md)
-* [💫 Soon](mainnet/soon-1.md)
-* [💫 Soon](mainnet/soon-2.md)
+* [💫 COSMOS HUB](mainnet/cosmos-hub.md)
+* [💫 COMPOSABLE](mainnet/composable.md)
+* [💫 OSMOSIS](mainnet/osmosis.md)
 
 ## Testnet
 
