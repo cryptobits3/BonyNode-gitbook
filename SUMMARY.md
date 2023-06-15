@@ -125,6 +125,12 @@
   * [Snapshot](testnet/timpi/snapshot.md)
   * [State sync](testnet/timpi/state-sync.md)
   * [Useful commands](testnet/timpi/useful-commands.md)
+* [🚀 NOLUS](testnet/nolus/README.md)
+  * [Installation](testnet/nolus/installation.md)
+  * [Upgrade](testnet/nolus/upgrade.md)
+  * [Snapshot](testnet/nolus/snapshot.md)
+  * [State sync](testnet/nolus/state-sync.md)
+  * [Useful commands](testnet/nolus/useful-commands.md)
 
 ***
 
