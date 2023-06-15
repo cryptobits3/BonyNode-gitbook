@@ -38,6 +38,8 @@ coverY: 0
 
 <img src="https://raw.githubusercontent.com/kj89/cosmos-images/main/icons/lava.png" alt="" data-size="line"> [Lava](broken-reference)
 
+<img src="https://raw.githubusercontent.com/kj89/cosmos-images/main/icons/nolus.png" alt="" data-size="line"> [Nolus](broken-reference)
+
 <img src="https://raw.githubusercontent.com/kj89/cosmos-images/main/icons/ojo.png" alt="" data-size="line"> [Ojo](broken-reference)
 
 <img src="https://raw.githubusercontent.com/kj89/cosmos-images/main/icons/ollo.png" alt="" data-size="line"> [Ollo](broken-reference)
