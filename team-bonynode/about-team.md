@@ -1,5 +1,4 @@
 ---
-description: Abaut
 coverY: 0
 ---
 
