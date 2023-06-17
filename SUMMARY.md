@@ -1,8 +1,8 @@
 # Table of contents
 
+* [👽 BonyNode Explorer](http://explorer.bonynode.online/)
 * [💚 Supported Chains](README.md)
 * [💸 Supported IBC Relayers](supported-ibc-relayers.md)
-* [👽 Explorers Chains](explorers-chains.md)
 * [🧙♀ Monitoring Tools](monitoring-tools.md)
 * [🏝 Governance Proposals Bots](governance-proposals-bots.md)
 
