@@ -6,13 +6,11 @@ coverY: 0
 
 # 💚 Supported Chains
 
-**Chains supported**: - | **Assets staked**: - | **Clients**: -
+**Chains supported**:  | **Assets staked**:  | **Clients**:&#x20;
 
 ## MAINNET
 
 <img src="https://raw.githubusercontent.com/kj89/cosmos-images/main/icons/cosmoshub.png" alt="" data-size="line"> [Cosmos Hub](broken-reference)
-
-<img src="https://raw.githubusercontent.com/kj89/cosmos-images/main/icons/composable.png" alt="" data-size="line"> [Composable](broken-reference)
 
 <img src="https://raw.githubusercontent.com/kj89/cosmos-images/main/icons/osmosis.png" alt="" data-size="line"> [Osmosis](broken-reference)
 
