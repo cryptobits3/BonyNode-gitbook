@@ -1,6 +1,6 @@
 # Table of contents
 
-* [👽 BonyNode Explorer](http://explorer.bonynode.online/)
+* [👽 BonyNode Explorer](https://bonynode.online/)
 * [💚 Supported Chains](README.md)
 * [💸 Supported IBC Relayers](supported-ibc-relayers.md)
 * [🧙♀ Monitoring Tools](monitoring-tools.md)
