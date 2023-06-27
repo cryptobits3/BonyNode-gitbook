@@ -95,6 +95,12 @@
   * [Snapshot](testnet/lava/snapshot.md)
   * [State sync](testnet/lava/state-sync.md)
   * [Useful commands](testnet/lava/useful-commands.md)
+* [🚀 NOLUS](testnet/nolus/README.md)
+  * [Installation](testnet/nolus/installation.md)
+  * [Upgrade](testnet/nolus/upgrade.md)
+  * [Snapshot](testnet/nolus/snapshot.md)
+  * [State sync](testnet/nolus/state-sync.md)
+  * [Useful commands](testnet/nolus/useful-commands.md)
 * [🚀 OJO](testnet/ojo/README.md)
   * [Installation](testnet/ojo/installation.md)
   * [Upgrade](testnet/ojo/upgrade.md)
@@ -119,12 +125,6 @@
   * [Snapshot](testnet/timpi/snapshot.md)
   * [State sync](testnet/timpi/state-sync.md)
   * [Useful commands](testnet/timpi/useful-commands.md)
-* [🚀 NOLUS](testnet/nolus/README.md)
-  * [Installation](testnet/nolus/installation.md)
-  * [Upgrade](testnet/nolus/upgrade.md)
-  * [Snapshot](testnet/nolus/snapshot.md)
-  * [State sync](testnet/nolus/state-sync.md)
-  * [Useful commands](testnet/nolus/useful-commands.md)
 
 ***
 
