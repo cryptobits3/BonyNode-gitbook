@@ -20,6 +20,7 @@
   * [Snapshot](mainnet/osmosis/snapshot.md)
   * [State sync](mainnet/osmosis/state-sync.md)
   * [Useful commands](mainnet/osmosis/useful-commands.md)
+* [💫 ARCHWAY](mainnet/archway.md)
 
 ## Testnet
 
