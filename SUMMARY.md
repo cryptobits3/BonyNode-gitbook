@@ -20,7 +20,18 @@
   * [Snapshot](mainnet/osmosis/snapshot.md)
   * [State sync](mainnet/osmosis/state-sync.md)
   * [Useful commands](mainnet/osmosis/useful-commands.md)
-* [💫 ARCHWAY](mainnet/archway.md)
+* [💫 ARCHWAY](mainnet/archway/README.md)
+  * [Page 5](mainnet/archway/page-5.md)
+  * [Page 4](mainnet/archway/page-4.md)
+  * [Page 3](mainnet/archway/page-3.md)
+  * [Page 2](mainnet/archway/page-2.md)
+  * [Page 1](mainnet/archway/page-1.md)
+* [💫 EMPOWER](mainnet/empower/README.md)
+  * [Page 10](mainnet/empower/page-10.md)
+  * [Page 9](mainnet/empower/page-9.md)
+  * [Page 8](mainnet/empower/page-8.md)
+  * [Page 7](mainnet/empower/page-7.md)
+  * [Page 6](mainnet/empower/page-6.md)
 
 ## Testnet
 
