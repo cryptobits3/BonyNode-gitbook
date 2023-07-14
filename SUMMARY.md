@@ -1,8 +1,8 @@
 # Table of contents
 
 * [👽 BonyNode Explorer](https://bonynode.online/)
+* [💸 Supported IBC Relayers](https://relayers.smartstake.io/relayer/)
 * [💚 Supported Chains](README.md)
-* [💸 Supported IBC Relayers](supported-ibc-relayers.md)
 * [🧙♀ Monitoring Tools](monitoring-tools.md)
 * [🏝 Governance Proposals Bots](governance-proposals-bots.md)
 
