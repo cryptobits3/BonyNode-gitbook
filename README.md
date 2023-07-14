@@ -10,7 +10,11 @@ coverY: 0
 
 ## MAINNET
 
+<img src="https://raw.githubusercontent.com/kj89/cosmos-images/main/logos/archway.png" alt="" data-size="line"> [Archway](https://services.kjnodes.com/testnet/archway/)
+
 <img src="https://raw.githubusercontent.com/kj89/cosmos-images/main/icons/cosmoshub.png" alt="" data-size="line"> [Cosmos Hub](broken-reference)
+
+<img src="https://itrocket.net/_next/image/?url=%2F_next%2Fstatic%2Fmedia%2Fempower.116ef4f1.png&#x26;w=64&#x26;q=75" alt="project logo" data-size="line"> [Empower](./)
 
 <img src="https://raw.githubusercontent.com/kj89/cosmos-images/main/icons/osmosis.png" alt="" data-size="line"> [Osmosis](broken-reference)
 
@@ -18,7 +22,9 @@ coverY: 0
 
 <img src="https://raw.githubusercontent.com/kj89/cosmos-images/main/icons/andromeda.png" alt="" data-size="line"> [Andromeda](broken-reference)
 
-<img src="https://raw.githubusercontent.com/kj89/cosmos-images/main/icons/archway.png" alt="" data-size="line"> [Archway](broken-reference)
+<img src="https://raw.githubusercontent.com/kj89/cosmos-images/main/icons/archway.png" alt="" data-size="line"> [Archway](broken-reference)\
+\
+<img src="https://raw.githubusercontent.com/kj89/cosmos-images/main/logos/babylon.png" alt="" data-size="line"> [Babylon](./)
 
 <img src="https://raw.githubusercontent.com/kj89/cosmos-images/main/icons/cascadia.png" alt="" data-size="line"> [Cascadia](broken-reference)
 
@@ -32,6 +38,8 @@ coverY: 0
 
 <img src="https://raw.githubusercontent.com/kj89/cosmos-images/main/icons/elys.png" alt="" data-size="line"> [Elys](broken-reference)
 
+<img src="https://itrocket.net/_next/image/?url=%2F_next%2Fstatic%2Fmedia%2Fempower.116ef4f1.png&#x26;w=64&#x26;q=75" alt="project logo" data-size="line"> [Empower](./)
+
 <img src="https://raw.githubusercontent.com/kj89/cosmos-images/main/icons/hypersign.png" alt="" data-size="line"> [Hypersign](broken-reference)
 
 <img src="https://raw.githubusercontent.com/kj89/cosmos-images/main/icons/lava.png" alt="" data-size="line"> [Lava](broken-reference)
@@ -42,6 +50,8 @@ coverY: 0
 
 <img src="https://raw.githubusercontent.com/kj89/cosmos-images/main/icons/ollo.png" alt="" data-size="line"> [Ollo](broken-reference)
 
-<img src="https://raw.githubusercontent.com/kj89/cosmos-images/main/icons/source.png" alt="" data-size="line"> [Source](broken-reference)
+<img src="https://raw.githubusercontent.com/kj89/cosmos-images/main/icons/source.png" alt="" data-size="line"> [Source](broken-reference)\
+\
+<img src="https://itrocket.net/_next/image/?url=%2F_next%2Fstatic%2Fmedia%2Fsao.139e53a2.jpg&#x26;w=64&#x26;q=75" alt="project logo" data-size="line"> [Sao](./)
 
-<img src="https://raw.githubusercontent.com/kj89/cosmos-images/main/icons/zetachain.png" alt="" data-size="line"> [Zetachain](broken-reference)
+<img src="https://raw.githubusercontent.com/kj89/cosmos-images/main/icons/zetachain.png" alt="" data-size="line"> [Zetachain](broken-reference)\
