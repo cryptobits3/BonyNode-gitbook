@@ -107,7 +107,7 @@
   * [Snapshot](testnet/lava/snapshot.md)
   * [State sync](testnet/lava/state-sync.md)
   * [Useful commands](testnet/lava/useful-commands.md)
-  * [public RPC, API, gRPC](testnet/lava/public-rpc-api-grpc.md)
+  * [Public RPC, API](testnet/lava/public-rpc-api.md)
 * [🚀 NOLUS](testnet/nolus/README.md)
   * [Installation](testnet/nolus/installation.md)
   * [Upgrade](testnet/nolus/upgrade.md)
