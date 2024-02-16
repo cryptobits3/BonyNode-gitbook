@@ -4,14 +4,14 @@ description: lava testnet-2
 
 # RPC, API, gRPC
 
-RPC:  http://bonynode.online:38657
+RPC:  [http://bonynode.online:38657](http://bonynode.online:38657)
 
 <pre class="language-bash"><code class="lang-bash"><strong>http://bonynode.online:38657
 </strong></code></pre>
 
 \
 \
-API:  http://bonynode.online:38317
+API:  [http://bonynode.online:38317](http://bonynode.online:38317)
 
 ```bash
 http://bonynode.online:38317
