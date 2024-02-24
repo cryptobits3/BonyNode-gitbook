@@ -10,6 +10,8 @@ coverY: 0
 
 ## MAINNET
 
+
+
 <img src="https://raw.githubusercontent.com/kj89/cosmos-images/main/logos/archway.png" alt="" data-size="line"> [Archway](https://services.kjnodes.com/testnet/archway/)
 
 <img src="https://raw.githubusercontent.com/kj89/cosmos-images/main/icons/cosmoshub.png" alt="" data-size="line"> [Cosmos Hub](broken-reference)
@@ -17,6 +19,14 @@ coverY: 0
 <img src="https://itrocket.net/_next/image/?url=%2F_next%2Fstatic%2Fmedia%2Fempower.116ef4f1.png&#x26;w=64&#x26;q=75" alt="project logo" data-size="line"> [Empower](./)
 
 <img src="https://raw.githubusercontent.com/kj89/cosmos-images/main/icons/osmosis.png" alt="" data-size="line"> [Osmosis](broken-reference)
+
+<img src="https://raw.githubusercontent.com/kj89/cosmos-images/main/icons/cosmoshub.png" alt="" data-size="line"> Timpi
+
+<img src="https://raw.githubusercontent.com/kj89/cosmos-images/main/icons/cosmoshub.png" alt="" data-size="line"> Terp
+
+<img src="https://raw.githubusercontent.com/kj89/cosmos-images/main/icons/cosmoshub.png" alt="" data-size="line"> Source
+
+<img src="https://raw.githubusercontent.com/kj89/cosmos-images/main/icons/cosmoshub.png" alt="" data-size="line"> Arkhadian
 
 ## TESTNET
 

@@ -3,11 +3,16 @@
 * [👽 BonyNode Explorer](https://bonynode.online/)
 * [💸 Supported IBC Relayers](https://relayers.smartstake.io/relayer/)
 * [💚 Supported Chains](README.md)
-* [🧙♀ Monitoring Tools](monitoring-tools.md)
-* [🏝 Governance Proposals Bots](governance-proposals-bots.md)
+* [🧙‍♀️ Monitoring Tools](monitoring-tools.md)
+* [🏝️ Governance Proposals Bots](governance-proposals-bots.md)
 
 ## Mainnet
 
+* [🚀 TIMPI](mainnet/timpi/README.md)
+  * [Installation](mainnet/timpi/installation.md)
+  * [Upgrade](mainnet/timpi/upgrade.md)
+  * [Snapshot](mainnet/timpi/snapshot.md)
+  * [Useful commands](mainnet/timpi/useful-commands.md)
 * [💫 COSMOS HUB](mainnet/cosmos-hub/README.md)
   * [Installation](mainnet/cosmos-hub/installation.md)
   * [Upgrade](mainnet/cosmos-hub/upgrade.md)
@@ -132,12 +137,6 @@
   * [Snapshot](testnet/sao/snapshot.md)
   * [State sync](testnet/sao/state-sync.md)
   * [Useful commands](testnet/sao/useful-commands.md)
-* [🚀 TIMPI](testnet/timpi/README.md)
-  * [Installation](testnet/timpi/installation.md)
-  * [Upgrade](testnet/timpi/upgrade.md)
-  * [Snapshot](testnet/timpi/snapshot.md)
-  * [State sync](testnet/timpi/state-sync.md)
-  * [Useful commands](testnet/timpi/useful-commands.md)
 
 ***
 
