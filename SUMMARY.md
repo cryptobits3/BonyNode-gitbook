@@ -116,6 +116,7 @@
 * [🚀 NAMADA](testnet/namada/README.md)
   * [Install](testnet/namada/install.md)
   * [Public RPC](testnet/namada/public-rpc.md)
+  * [Useful Commands](testnet/namada/useful-commands.md)
 * [🚀 NOLUS](testnet/nolus/README.md)
   * [Installation](testnet/nolus/installation.md)
   * [Upgrade](testnet/nolus/upgrade.md)
