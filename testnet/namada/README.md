@@ -1,2 +1,2 @@
-# NAMADA
+# 🚀 NAMADA
 

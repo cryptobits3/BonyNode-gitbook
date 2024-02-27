@@ -113,6 +113,9 @@
   * [State sync](testnet/lava/state-sync.md)
   * [Useful commands](testnet/lava/useful-commands.md)
   * [Public RPC, API](testnet/lava/public-rpc-api.md)
+* [🚀 NAMADA](testnet/namada/README.md)
+  * [Install](testnet/namada/install.md)
+  * [Public RPC](testnet/namada/public-rpc.md)
 * [🚀 NOLUS](testnet/nolus/README.md)
   * [Installation](testnet/nolus/installation.md)
   * [Upgrade](testnet/nolus/upgrade.md)
@@ -137,9 +140,6 @@
   * [Snapshot](testnet/sao/snapshot.md)
   * [State sync](testnet/sao/state-sync.md)
   * [Useful commands](testnet/sao/useful-commands.md)
-* [NAMADA](testnet/namada/README.md)
-  * [Install](testnet/namada/install.md)
-  * [Public RPC](testnet/namada/public-rpc.md)
 
 ***
 
