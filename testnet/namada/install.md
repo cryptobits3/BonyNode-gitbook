@@ -88,6 +88,14 @@ namada --version
 
 🔗 Join-network as Pre-Genesis Validator
 
+📁 Move your pre-genesis folder to _$BASE\_DIR_ and join the network:
+
+```bash
+cd $HOME
+cp -r ~/.namada/pre-genesis $BASE_DIR/
+namada client utils join-network --chain-id $CHAIN_ID --genesis-validator $ALIAS
+```
+
 Join-network as Full Nodes or Post-Genesis Validator:
 
 ```bash
@@ -138,7 +146,142 @@ sudo systemctl enable namadad
 sudo systemctl restart namadad && sudo journalctl -u namadad -f
 ```
 
-🔎 Create and fund wallet🧑‍🎓 Turn your full node into a validator
+🔎 Create and fund walletCreate wallet:
+
+```bash
+namadaw gen --alias $WALLET
+```
+
+Restore existing wallet:
+
+```bash
+namadaw derive --alias $WALLET
+```
+
+Find your wallet address:
+
+```bash
+namadaw find --alias $WALLET
+```
+
+Copy the implicit address (starts with tnam...) for the next stepFund your wallet from [faucet](https://faucet.housefire.luminara.icu/)After a couple of minutes, check the balance
+
+```bash
+namadac balance --owner $WALLET
+```
+
+List known keys and addresses in the wallet
+
+```bash
+namadaw list
+```
+
+Delete wallet
+
+```bash
+namadaw remove --alias $WALLET --do-it
+```
+
+Check Sync status, once your node is fully synced, the output from above will sayfalse
+
+```bash
+curl http://127.0.0.1:26657/status | jq 
+```
+
+🧑‍🎓 Turn your full node into a validatorInitiate a validator
+
+```bash
+namadac init-validator \
+		--commission-rate 0.07 \
+		--max-commission-rate-change 1 \
+		--signing-keys $WALLET \
+		--alias $ALIAS \
+		--email <EMAIL_ADDRESS> \
+		--website <WEBSITE> \ 
+		--discord-handle <DISCORD> \
+		--account-keys $WALLET \
+		--memo $MEMO
+```
+
+Find your establishedvalidator address
+
+```bash
+namadaw list | grep -A 1 ""$ALIAS"" | grep "Established"
+```
+
+Replace your Validator address, save and import variables into system
+
+```bash
+VALIDATOR_ADDRESS=$(namadaw list | grep -A 1 "\"$ALIAS\"" | grep "Established" | awk '{print $3}') 
+echo "export VALIDATOR_ADDRESS="$VALIDATOR_ADDRESS"" >> $HOME/.bash_profile 
+source $HOME/.bash_profile
+```
+
+Restart the node and wait for 2 epochs
+
+```bash
+sudo systemctl restart namadad && sudo journalctl -u namadad -f
+```
+
+Check epoch
+
+```bash
+namada client epoch
+```
+
+Delegate tokens
+
+```bash
+namadac bond --validator $ALIAS --source $WALLET --amount 1000 --memo $MEMO
+```
+
+Wait for 3 epochs and check validator is in the consensus set
+
+```bash
+namadac validator-state --validator $ALIAS
+```
+
+Check your validator bond status
+
+```bash
+namada client bonds --owner $WALLET
+```
+
+Find your validator status
+
+```bash
+namada client validator-state --validator $VALIDATOR_ADDRESS
+```
+
+Add stake
+
+```bash
+namadac bond --source $WALLET --validator $VALIDATOR_ADDRESS --amount 1000
+```
+
+Query the set of validators
+
+```bash
+namadac bonded-stake
+```
+
+Unbond the tokens
+
+```bash
+namadac unbond --source $WALLET --validator $VALIDATOR_ADDRESS --amount 1000
+```
+
+Wait for 6 epochs, then check when the unbonded tokens can be withdrawed
+
+```bash
+namadac bonds --owner $WALLET
+```
+
+Withdraw the unbonded tokens
+
+```bash
+namadac withdraw --source $WALLET --validator $VALIDATOR_ADDRESS
+```
 
 ### Security <a href="#security" id="security"></a>
 
