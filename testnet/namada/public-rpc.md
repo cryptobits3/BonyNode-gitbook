@@ -7,7 +7,7 @@
 ### Public endpoints <a href="#public-endpoints" id="public-endpoints"></a>
 
 Public RPC:[https://namada-testnet-rpc.bonynode.online:443](http://88.99.208.54:11657/)\
-Public RPC (node operations):[tcp://namada-testnet-rpc.bonynode.online:12457](tcp://namada-testnet-rpc.bonynode.online:12457)\
+Public RPC (node operations):[tcp://namada-testnet-rpc.bonynode.online:12457](tcp://88.99.208.54:11657/)\
 Public indexer:[https://namada-testnet-indexer.bonynode.online/block/last](https://namada-testnet-indexer.bonynode.online/block/last)
 
 * encrypted rpc (SDK-compatible): [https://namada-testnet.rpc.bonynode.online](http://88.99.208.54:11657/)
