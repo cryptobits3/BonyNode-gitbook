@@ -137,6 +137,9 @@
   * [Snapshot](testnet/sao/snapshot.md)
   * [State sync](testnet/sao/state-sync.md)
   * [Useful commands](testnet/sao/useful-commands.md)
+* [NAMADA](testnet/namada/README.md)
+  * [Install](testnet/namada/install.md)
+  * [Public RPC](testnet/namada/public-rpc.md)
 
 ***
 
