@@ -1,4 +1,4 @@
-# 🚀 CASCADIA
+# 🚀 Crossfi
 
 <figure><img src="https://raw.githubusercontent.com/nodejumper-org/jumper-assets/master/images/chains/cascadia.webp" alt=""><figcaption></figcaption></figure>
 
