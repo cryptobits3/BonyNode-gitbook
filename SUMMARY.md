@@ -136,12 +136,12 @@
   * [Snapshot](testnet/ollo/snapshot.md)
   * [State sync](testnet/ollo/state-sync.md)
   * [Useful commands](testnet/ollo/useful-commands.md)
-* [🚀 SAO](testnet/sao/README.md)
-  * [Installation](testnet/sao/installation.md)
-  * [Upgrade](testnet/sao/upgrade.md)
-  * [Snapshot](testnet/sao/snapshot.md)
-  * [State sync](testnet/sao/state-sync.md)
-  * [Useful commands](testnet/sao/useful-commands.md)
+* [🚀 SIDE](testnet/side/README.md)
+  * [Installation](testnet/side/installation.md)
+  * [Upgrade](testnet/side/upgrade.md)
+  * [Snapshot](testnet/side/snapshot.md)
+  * [State sync](testnet/side/state-sync.md)
+  * [Useful commands](testnet/side/useful-commands.md)
 
 ***
 
