@@ -7,9 +7,9 @@ explorer - [https://bonynode.online/crossfi/](https://bonynode.online/crossfi/)\
 \
 RPC, API, gRPC
 
-RPC: [https://crossfi-testnet-rpc.itrocket.net](https://crossfi-testnet-rpc.itrocket.net/)\
-API: [https://crossfi-testnet-api.itrocket.net](https://crossfi-testnet-api.itrocket.net/)\
-JSON-RPC: [https://crossfi-testnet-jsonrpc.itrocket.net](https://crossfi-testnet-jsonrpc.itrocket.net/)\
+RPC: [https://crossfi-testnet-rpc.bonynode.online](https://crossfi-testnet-rpc.bonynode.online)\
+API: [https://crossfi-testnet-api.bonynode.online](https://crossfi-testnet-api.bonynode.online)\
+JSON-RPC: [https://crossfi-testnet-jsonrpc.bonynode.online](https://crossfi-testnet-jsonrpc.itrocket.net/)\
 \
 \
 **Why is CrossFi technology unique?**&#x20;
