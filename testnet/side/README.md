@@ -12,9 +12,7 @@ The Exchange Layer of Web3 \
 Discover The Unexplored Side\
 Enter the Web of Endless Opportunities and Unleash Limitless Potential\
 \
-Side Protocol: [https://side.one](https://side.one/) Side Labs: [https://sidelabs.co](https://sidelabs.co/)\
-\
-RPC, API
+Side Protocol: [https://side.one](https://side.one/) Side Labs: [https://sidelabs.co](https://sidelabs.co/)
 
 RPC:[ https://side-testnet-rpc.bonynode.online](https://side-testnet-rpc.bonynode.online)\
 API: [https://side-testnet-api.bonynode.online](https://side-testnet-api.bonynode.online)\

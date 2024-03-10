@@ -1,5 +1,25 @@
 # Snapshot
 
+RPC:[ https://side-testnet-rpc.bonynode.online](https://side-testnet-rpc.bonynode.online)\
+API: [https://side-testnet-api.bonynode.online](https://side-testnet-api.bonynode.online)
+
+### Snapshot <a href="#snap" id="snap"></a>
+
+height: 247866 | 46m ago | size: 2.8GB | pruning: custom: 100/0/10 | indexer: null
+
+```bash
+sudo systemctl stop sided
+
+cp $HOME/.side/data/priv_validator_state.json $HOME/.side/priv_validator_state.json.backup
+
+rm -rf $HOME/.side/data $HOME/.side/wasmPath
+curl https://testnet-files.itrocket.net/side/snap_side.tar.lz4 | lz4 -dc - | tar -xf - -C $HOME/.side
+
+mv $HOME/.side/priv_validator_state.json.backup $HOME/.side/data/priv_validator_state.json
+
+sudo systemctl restart sided && sudo journalctl -u sided -f
+```
+
 #### gRPC: <a href="#grpc" id="grpc"></a>
 
 ```bash
@@ -35,19 +55,4 @@ updates every hour
 wget -O $HOME/.side/config/addrbook.json https://testnet-files.itrocket.net/side/addrbook.json
 ```
 
-### Snapshot <a href="#snap" id="snap"></a>
-
-height: 247866 | 46m ago | size: 2.8GB | pruning: custom: 100/0/10 | indexer: null
-
-```bash
-sudo systemctl stop sided
-
-cp $HOME/.side/data/priv_validator_state.json $HOME/.side/priv_validator_state.json.backup
-
-rm -rf $HOME/.side/data $HOME/.side/wasmPath
-curl https://testnet-files.itrocket.net/side/snap_side.tar.lz4 | lz4 -dc - | tar -xf - -C $HOME/.side
-
-mv $HOME/.side/priv_validator_state.json.backup $HOME/.side/data/priv_validator_state.json
-
-sudo systemctl restart sided && sudo journalctl -u sided -f
-```
+### &#x20;<a href="#snap" id="snap"></a>
