@@ -70,6 +70,7 @@
   * [Snapshot](testnet/cascadia/snapshot.md)
   * [State sync](testnet/cascadia/state-sync.md)
   * [Useful commands](testnet/cascadia/useful-commands.md)
+  * [Grant Validators](testnet/crossfi/grant-validators.md)
 * [🚀 CELESTIA](testnet/celestia/README.md)
   * [Installation](testnet/celestia/installation.md)
   * [Upgrade](testnet/celestia/upgrade.md)
