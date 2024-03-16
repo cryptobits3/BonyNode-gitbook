@@ -4,7 +4,7 @@
 
 | Chain ID      | Latest Version Tag | Custom Port |
 | ------------- | ------------------ | ----------- |
-| elystestnet-1 | v0.29.23           | 153         |
+| elystestnet-1 | v0.29.24           | 153         |
 
 Since we are using Cosmovisor, it makes it very easy to prepare for upcomming upgrade. You just have to build new binaries and move it into cosmovisor upgrades directory.
 
@@ -16,14 +16,14 @@ cd $HOME
 rm -rf elys
 git clone https://github.com/elys-network/elys.git
 cd elys
-git checkout v0.29.23
+git checkout v0.29.24
 
 # Build binaries
 make build
 
 # Prepare binaries for Cosmovisor
-mkdir -p $HOME/.elys/cosmovisor/upgrades/v0.29.23/bin
-mv build/elysd $HOME/.elys/cosmovisor/upgrades/v0.29.23/bin/
+mkdir -p $HOME/.elys/cosmovisor/upgrades/v0.29.24/bin
+mv build/elysd $HOME/.elys/cosmovisor/upgrades/v0.29.24/bin/
 rm -rf build
 ```
 

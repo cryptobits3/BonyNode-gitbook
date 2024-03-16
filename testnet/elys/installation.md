@@ -41,7 +41,7 @@ cd $HOME
 rm -rf elys
 git clone https://github.com/elys-network/elys.git
 cd elys
-git checkout v0.29.23
+git checkout v0.29.24
 
 # Build binaries
 make build
