@@ -4,7 +4,7 @@
 
 | Chain ID      | Latest Version Tag | Custom Port |
 | ------------- | ------------------ | ----------- |
-| elystestnet-1 | v0.29.23           | 153         |
+| elystestnet-1 | v0.29.24           | 153         |
 
 #### Setup validator name <a href="#setup-validator-name" id="setup-validator-name"></a>
 

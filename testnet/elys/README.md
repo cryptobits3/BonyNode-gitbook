@@ -6,7 +6,7 @@ Elys is a fast layer 1 blockchain powered by the Cosmos-SDK. It is the first, an
 
 | Chain ID      | Latest Version Tag | Wasm |
 | ------------- | ------------------ | ---- |
-| elystestnet-1 | v0.29.23           | ON   |
+| elystestnet-1 | v0.29.24           | ON   |
 
 [Website](https://elys.network/) | [Discord](https://discord.gg/R9Gr6Vh7vC) | [Twitter](https://twitter.com/elys\_network)
 
