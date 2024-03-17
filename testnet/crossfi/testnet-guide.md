@@ -89,7 +89,7 @@ Contract address: `0xdb5c548684221ce2f55f16456ec5cf43a028d8e9`
 <figure><img src="https://img4.teletype.in/files/b7/d7/b7d7f9c3-af45-4b30-bbd9-6f430d06e904.png" alt=""><figcaption></figcaption></figure>
 
 Send tokens to any address\
-My wallet: `0x16A4f86020F583Fa92383712f883aB9Eb82da768`
+My wallet: `0x17CCDfc7Da0273fcd6e89E1a46E89EE9DbC2B800`
 
 <figure><img src="https://img2.teletype.in/files/d1/18/d118dcda-12b4-4204-9c0d-fe0f4ff086e0.png" alt=""><figcaption></figcaption></figure>
 
