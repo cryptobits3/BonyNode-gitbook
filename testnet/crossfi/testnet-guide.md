@@ -10,8 +10,6 @@ Claim 100 MPX (Every 24 hours you can claim). To claim MPX you need to login via
 
 <figure><img src="https://img1.teletype.in/files/8c/1b/8c1b896e-372e-4629-99ed-36fcc4a86472.png" alt=""><figcaption></figcaption></figure>
 
-<figure><img src="https://img1.teletype.in/files/8c/1b/8c1b896e-372e-4629-99ed-36fcc4a86472.png" alt="" height="449" width="413"><figcaption></figcaption></figure>
-
 Go to [https://test.xficonsole.com/](https://test.xficonsole.com/)
 
 Log in using seed phrase from the wallet you were using before
