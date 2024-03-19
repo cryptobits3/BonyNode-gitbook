@@ -24,8 +24,6 @@ Open Operations History tab and copy Transaction Hash
 
 <figure><img src="https://img1.teletype.in/files/0e/21/0e215dac-316d-462c-8c5e-2f72d62c48bc.png" alt=""><figcaption></figcaption></figure>
 
-<figure><img src="https://img2.teletype.in/files/9c/6b/9c6bb348-1744-41b8-9613-ce2e2a4f0f12.png" alt=""><figcaption></figcaption></figure>
-
 Go back to Testpad - [Link](https://testpad.xfi.foundation/earn-xft)
 
 Press Check and paste transaction Hash
@@ -35,9 +33,7 @@ Press Check and paste transaction Hash
 Next, go back to the console and do the same for EVM. A wallet to which you can always send tokens:\
 `0x17CCDfc7Da0273fcd6e89E1a46E89EE9DbC2B800`
 
-<figure><img src="https://img3.teletype.in/files/6e/84/6e8471ca-2d18-4f16-82fa-115a84a10c1f.png" alt=""><figcaption></figcaption></figure>
-
-Then we open the transaction history again, copy the Hash and paste it into tespad for verification
+Then we open the transaction history again, copy the Hash and paste it into testpad for verification
 
 <figure><img src="https://img3.teletype.in/files/a9/f7/a9f7a814-0de2-46dd-a10b-08241caace23.png" alt=""><figcaption></figcaption></figure>
 
@@ -49,8 +45,6 @@ Enter the wallets, the amount and send it.\
 `mx1zlxdl376qfele4hgncdyd6y7a8du9wqqak47k3`
 
 `mx14ys8msj28zl20ng3k0yqq04phfrc9hyssyazen`
-
-<figure><img src="https://img3.teletype.in/files/aa/bb/aabb2c1a-e720-44df-a2e8-64592f65b47a.png" alt=""><figcaption></figcaption></figure>
 
 Copy the hash of the transaction and send it for verification
 
