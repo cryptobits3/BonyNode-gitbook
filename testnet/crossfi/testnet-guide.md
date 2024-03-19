@@ -19,7 +19,7 @@ $2 Million in MPX coins, which is 1.16% (100,000,000 MPX) of the total MPX coin 
 4. Send MPX and/or XFI to different two addresses in one transaction
 5. Send XFI and MPX to different two addresses in one transaction
 6. Send Foundation token (XFT) with your wallet. Add XFI token contract (`0xDb5C548684221Ce2f55F16456Ec5Cf43a028D8e9`) to your wallet and send another wallet.
-7. Delegate MPX to `Anatolian Team` validator
+7. Delegate MPX to BonyNode💚 validator
 8. Then go to user panel and confirm you transactions.
 
 ### Transaction Control Page[​](https://services.anatolianteam.com/docs/Testnet/Cosmos-Ecosystem/crossfi/user-guide#transaction-control-page) <a href="#transaction-control-page" id="transaction-control-page"></a>
