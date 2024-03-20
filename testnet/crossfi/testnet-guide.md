@@ -6,7 +6,7 @@ $2 Million in MPX coins, which is 1.16% (100,000,000 MPX) of the total MPX coin 
 
 ### Things to Do in User Panel[​](https://services.anatolianteam.com/docs/Testnet/Cosmos-Ecosystem/crossfi/user-guide#things-to-do-in-user-panel) <a href="#things-to-do-in-user-panel" id="things-to-do-in-user-panel"></a>
 
-1. Create fresh EVM wallet.
+1. Create fresh EVM wallet. (save wallet)
 2. Got to [user panel](https://testpad.xfi.foundation/) and Sign Up to dashboard.
 3. Request tokens by connecting your telegram to Faucet.
 4. Go to [XFI Console](https://test.xficonsole.com/) and complete the tasks on the [Earn XFT page](https://testpad.xfi.foundation/earn-xft).
