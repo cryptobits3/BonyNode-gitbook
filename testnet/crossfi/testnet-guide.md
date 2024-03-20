@@ -18,16 +18,16 @@ $2 Million in MPX coins, which is 1.16% (100,000,000 MPX) of the total MPX coin 
 3. Send XFI to the EVM part of the console to another EVM wallet address\
    `0x17CCDfc7Da0273fcd6e89E1a46E89EE9DbC2B800`
 4.  Send MPX and/or XFI to different two addresses in one transaction\
-    `mx1zlxdl376qfele4hgncdyd6y7a8du9wqqak47k3`
+    `mx1zlxdl376qfele4hgncdyd6y7a8du9wqqak47k3` MPX
 
-    `mx14ys8msj28zl20ng3k0yqq04phfrc9hyssyazen`
+    `mx14ys8msj28zl20ng3k0yqq04phfrc9hyssyazen` XFI
 5.  Send XFI and MPX to different two addresses in one transaction\
-    `mx1zlxdl376qfele4hgncdyd6y7a8du9wqqak47k3`
+    `mx1zlxdl376qfele4hgncdyd6y7a8du9wqqak47k3` XFI MPX
 
-    `mx14ys8msj28zl20ng3k0yqq04phfrc9hyssyazen`
-6. Send Foundation token (XFT) with your wallet. Add XFI token contract (`0xDb5C548684221Ce2f55F16456Ec5Cf43a028D8e9`) to your wallet and send another wallet - `0x17CCDfc7Da0273fcd6e89E1a46E89EE9DbC2B800`
+    `mx14ys8msj28zl20ng3k0yqq04phfrc9hyssyazen` MPX XFI
+6. Send Foundation token (XFT) with your wallet. Add XFI token contract (`0xDb5C548684221Ce2f55F16456Ec5Cf43a028D8e9`) to your wallet and send wallet - `0x17CCDfc7Da0273fcd6e89E1a46E89EE9DbC2B800`
 7. Delegate MPX to BonyNode💚 validator
-8. Then go to user panel and confirm you transactions.
+8. Then go to user panel and confirm you transactions.  [Earn XFT page](https://testpad.xfi.foundation/earn-xft).
 
 ### Transaction Control Page[​](https://services.anatolianteam.com/docs/Testnet/Cosmos-Ecosystem/crossfi/user-guide#transaction-control-page) <a href="#transaction-control-page" id="transaction-control-page"></a>
 
