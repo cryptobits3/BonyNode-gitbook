@@ -14,11 +14,18 @@ $2 Million in MPX coins, which is 1.16% (100,000,000 MPX) of the total MPX coin 
 ### Things to Do in XFI Console Panel[​](https://services.anatolianteam.com/docs/Testnet/Cosmos-Ecosystem/crossfi/user-guide#things-to-do-in-xfi-console-panel) <a href="#things-to-do-in-xfi-console-panel" id="things-to-do-in-xfi-console-panel"></a>
 
 1. Go to [XFI Console](https://test.xficonsole.com/)
-2. Send MPX or XFI to the Cosmos part of the console to another Cosmos wallet address
-3. Send XFI to the EVM part of the console to another EVM wallet address
-4. Send MPX and/or XFI to different two addresses in one transaction
-5. Send XFI and MPX to different two addresses in one transaction
-6. Send Foundation token (XFT) with your wallet. Add XFI token contract (`0xDb5C548684221Ce2f55F16456Ec5Cf43a028D8e9`) to your wallet and send another wallet.
+2. Send MPX or XFI to the Cosmos part of the console to another Cosmos wallet address `mx1zlxdl376qfele4hgncdyd6y7a8du9wqqak47k3`
+3. Send XFI to the EVM part of the console to another EVM wallet address\
+   `0x17CCDfc7Da0273fcd6e89E1a46E89EE9DbC2B800`
+4.  Send MPX and/or XFI to different two addresses in one transaction\
+    `mx1zlxdl376qfele4hgncdyd6y7a8du9wqqak47k3`
+
+    `mx14ys8msj28zl20ng3k0yqq04phfrc9hyssyazen`
+5.  Send XFI and MPX to different two addresses in one transaction\
+    `mx1zlxdl376qfele4hgncdyd6y7a8du9wqqak47k3`
+
+    `mx14ys8msj28zl20ng3k0yqq04phfrc9hyssyazen`
+6. Send Foundation token (XFT) with your wallet. Add XFI token contract (`0xDb5C548684221Ce2f55F16456Ec5Cf43a028D8e9`) to your wallet and send another wallet - `0x17CCDfc7Da0273fcd6e89E1a46E89EE9DbC2B800`
 7. Delegate MPX to BonyNode💚 validator
 8. Then go to user panel and confirm you transactions.
 
