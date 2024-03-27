@@ -125,13 +125,13 @@ To valoper addressTo wallet addressAmount, uside
 Withdraw all rewards
 
 ```bash
-sided tx distribution withdraw-all-rewards --from $WALLET --chain-id side-testnet-2 --gas auto --fees 1000uside
+sided tx distribution withdraw-all-rewards --from $WALLET --chain-id side-testnet-3 --gas auto --fees 1000uside
 ```
 
 Withdraw rewards and commission from your validator
 
 ```bash
-sided tx distribution withdraw-rewards $VALOPER_ADDRESS --from $WALLET --commission --chain-id side-testnet-2 --gas auto --fees 1000uside -y
+sided tx distribution withdraw-rewards $VALOPER_ADDRESS --from $WALLET --commission --chain-id side-testnet-3 --gas auto --fees 1000uside -y
 ```
 
 Check your balance
@@ -143,25 +143,25 @@ sided query bank balances $WALLET_ADDRESS
 Delegate to Yourself
 
 ```bash
-sided tx staking delegate $(sided keys show $WALLET --bech val -a) 1000000uside --from $WALLET --chain-id side-testnet-2 --gas auto --fees 1000uside -y
+sided tx staking delegate $(sided keys show $WALLET --bech val -a) 1000000uside --from $WALLET --chain-id side-testnet-3 --gas auto --fees 1000uside -y
 ```
 
 Delegate
 
 ```bash
-sided tx staking delegate <TO_VALOPER_ADDRESS> 1000000uside --from $WALLET --chain-id side-testnet-2 --gas auto --fees 1000uside -y
+sided tx staking delegate <TO_VALOPER_ADDRESS> 1000000uside --from $WALLET --chain-id side-testnet-3 --gas auto --fees 1000uside -y
 ```
 
 Redelegate Stake to Another Validator
 
 ```bash
-sided tx staking redelegate $VALOPER_ADDRESS <TO_VALOPER_ADDRESS> 1000000uside --from $WALLET --chain-id side-testnet-2 --gas auto --fees 1000uside -y
+sided tx staking redelegate $VALOPER_ADDRESS <TO_VALOPER_ADDRESS> 1000000uside --from $WALLET --chain-id side-testnet-3 --gas auto --fees 1000uside -y
 ```
 
 Unbond
 
 ```bash
-sided tx staking unbond $(sided keys show $WALLET --bech val -a) 1000000uside --from $WALLET --chain-id side-testnet-2 --gas auto --fees 1000uside -y
+sided tx staking unbond $(sided keys show $WALLET --bech val -a) 1000000uside --from $WALLET --chain-id side-testnet-3 --gas auto --fees 1000uside -y
 ```
 
 Transfer Funds
@@ -188,7 +188,7 @@ sided tx staking create-validator \
 --moniker "$MONIKER" \
 --identity "" \
 --details "I love blockchain ❤️" \
---chain-id side-testnet-2 \
+--chain-id side-testnet-3 \
 --gas auto --fees 1000uside \
 -y
 ```
@@ -202,7 +202,7 @@ sided tx staking edit-validator \
 --identity "" \
 --details "I love blockchain ❤️" \
 --from $WALLET \
---chain-id side-testnet-2 \
+--chain-id side-testnet-3 \
 --gas auto --fees 1000uside \
 -y
 ```
@@ -234,7 +234,7 @@ sided q slashing params
 Unjail validator
 
 ```bash
-sided tx slashing unjail --from $WALLET --chain-id side-testnet-2 --gas auto --fees 1000uside -y
+sided tx slashing unjail --from $WALLET --chain-id side-testnet-3 --gas auto --fees 1000uside -y
 ```
 
 Active Validators List
@@ -289,5 +289,5 @@ sided query gov proposal 1
 Vote
 
 ```bash
-sided tx gov vote 1 yes --from $WALLET --chain-id side-testnet-2  --gas auto --fees 1000uside -y
+sided tx gov vote 1 yes --from $WALLET --chain-id side-testnet-3  --gas auto --fees 1000uside -y
 ```

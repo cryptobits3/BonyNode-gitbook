@@ -2,8 +2,7 @@
 
 ### Manual Installation <a href="#installation" id="installation"></a>
 
-\
-Recommended Hardware: 4 Cores, 8GB RAM, 200GB of storage (NVME)
+Official DocumentationRecommended Hardware: 4 Cores, 8GB RAM, 200GB of storage (NVME)
 
 ```bash
 # install dependencies, if needed
@@ -11,9 +10,9 @@ sudo apt update && sudo apt upgrade -y
 sudo apt install curl git wget htop tmux build-essential jq make lz4 gcc unzip -y
 ```
 
-Node Name = test\
-Port = 45\
-wallet = wallet
+Node  Test\
+Name Wallet\
+Port  45
 
 ```bash
 # install go, if needed
@@ -31,7 +30,7 @@ source $HOME/.bash_profile
 # set vars
 echo "export WALLET="wallet"" >> $HOME/.bash_profile
 echo "export MONIKER="test"" >> $HOME/.bash_profile
-echo "export SIDE_CHAIN_ID="side-testnet-2"" >> $HOME/.bash_profile
+echo "export SIDE_CHAIN_ID="side-testnet-3"" >> $HOME/.bash_profile
 echo "export SIDE_PORT="45"" >> $HOME/.bash_profile
 source $HOME/.bash_profile
 
@@ -46,8 +45,8 @@ make install
 # config and init app
 sided config node tcp://localhost:${SIDE_PORT}657
 sided config keyring-backend os
-sided config chain-id side-testnet-2
-sided init "test" --chain-id side-testnet-2
+sided config chain-id side-testnet-3
+sided init "test" --chain-id side-testnet-3
 
 # download genesis and addrbook
 wget -O $HOME/.side/config/genesis.json https://testnet-files.itrocket.net/side/genesis.json
@@ -55,7 +54,7 @@ wget -O $HOME/.side/config/addrbook.json https://testnet-files.itrocket.net/side
 
 # set seeds and peers
 SEEDS="9c14080752bdfa33f4624f83cd155e2d3976e303@side-testnet-seed.itrocket.net:45656"
-PEERS="bbbf623474e377664673bde3256fc35a36ba0df1@side-testnet-peer.itrocket.net:45656,9f718219b4987c9625b7e656f231095cefba29e8@95.214.54.146:26858,51d27832df0ebda927247d11eec133323c8f4347@88.198.7.204:36656,d4f63fdebcb3a3bd458885b3e15dbec595f281a7@161.97.118.43:17656,bba0fc728d37aabf7e2c25ed1c097398158161f1@89.117.53.20:26656,85a16af0aa674b9d1c17c3f2f3a83f28f468174d@167.235.242.236:26656,e6575e39599afba59bbe3422284b22edfb1adafb@23.88.5.169:24656,be9c91db3d56bc0306374145c61819849e700e63@37.27.5.156:26656,4e0fb7292b57e78a73d31a19a609ba6a0e74118f@161.97.170.6:26656,a70265a28a06e5a7d525920514ae17406dbeffd0@104.236.66.76:26656,6def6906f05a0d10a671d3cd2005529d320bb3c7@152.228.208.164:26656"
+PEERS="bbbf623474e377664673bde3256fc35a36ba0df1@side-testnet-peer.itrocket.net:45656,6decdc5565bf5232cdf5597a7784bfe828c32277@158.220.126.137:11656,e9ee4fb923d5aab89207df36ce660ff1b882fc72@136.243.33.177:21656,169332e1a5aad8e49fced765992201774a754cd0@95.216.27.29:34656,2a6d31c23160e49db1f03a884dc7b9602fffe895@176.9.126.85:30004,c8962c5fe2622e969399f98377e775147425cf3f@173.249.44.60:34656,ca3379b48e196c3ef910a08452b459b0f327fdb6@95.216.3.115:34656,2780ffa710b0d42dacc4eeffb4c6bc145ef6636f@38.129.16.236:26656,bae861fd068a26b90235b3677d28d4f37d747e44@173.212.253.77:26656,b588e261519d49e436fc503af5b602810110bd36@194.163.149.7:26656,e52da5e5fecf65abf9d7a3135196240f065deed3@207.180.212.200:26656"
 sed -i -e "s/^seeds *=.*/seeds = \"$SEEDS\"/; s/^persistent_peers *=.*/persistent_peers = \"$PEERS\"/" $HOME/.side/config/config.toml
 
 # set custom ports in app.toml
@@ -162,7 +161,7 @@ sided tx staking create-validator \
 --moniker "test" \
 --identity "" \
 --details "I love blockchain ❤️" \
---chain-id side-testnet-2 \
+--chain-id side-testnet-3 \
 --gas auto --fees 1000uside \
 -y
 ```
