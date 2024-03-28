@@ -39,7 +39,7 @@ cd $HOME
 rm -rf side
 git clone https://github.com/sideprotocol/side.git
 cd side
-git checkout v0.6.0
+git checkout v0.7.0
 make install
 
 # config and init app

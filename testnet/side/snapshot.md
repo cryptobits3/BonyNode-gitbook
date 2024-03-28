@@ -3,9 +3,11 @@
 RPC:[ https://side-testnet-rpc.bonynode.online](https://side-testnet-rpc.bonynode.online)\
 API: [https://side-testnet-api.bonynode.online](https://side-testnet-api.bonynode.online)
 
+
+
 ### Snapshot <a href="#snap" id="snap"></a>
 
-height: 2964 | 1h ago | size: 691MB | pruning: custom: 100/0/10 | indexer: null
+height: 24544 | 41m ago | size: 2.0GB | pruning: custom: 100/0/10 | indexer: null
 
 ```bash
 sudo systemctl stop sided
@@ -19,6 +21,8 @@ mv $HOME/.side/priv_validator_state.json.backup $HOME/.side/data/priv_validator_
 
 sudo systemctl restart sided && sudo journalctl -u sided -f
 ```
+
+### &#x20;<a href="#snap" id="snap"></a>
 
 #### addrbook: <a href="#addrbook" id="addrbook"></a>
 
