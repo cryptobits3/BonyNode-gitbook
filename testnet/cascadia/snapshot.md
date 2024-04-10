@@ -2,7 +2,7 @@
 
 ### Snapshot <a href="#snap" id="snap"></a>
 
-height: 2155022 | 1h ago | size: 3.4GB | pruning: custom: 100/0/10 | indexer:
+height: 2673962 | 1d ago | size: 13GB | pruning: custom: 100/0/10 | indexer:
 
 ```bash
 sudo systemctl stop crossfid
@@ -16,4 +16,3 @@ mv $HOME/.mineplex-chain/priv_validator_state.json.backup $HOME/.mineplex-chain/
 
 sudo systemctl restart crossfid && sudo journalctl -u crossfid -f
 ```
-
