@@ -16,15 +16,23 @@ We run nodes on dedicated servers in Europe, USA and Canada. Our team uses monit
 
 We use ssh keys to login in our servers and disable password login and configure a firewall with a limited connection. All our keys are stored in a safe place and we are using a hardware key where it is possible. Our priority is security and reliability of your funds.
 
+<div align="center">
+
 <figure><img src="../.gitbook/assets/0xMaki (2).png" alt="" width="125"><figcaption></figcaption></figure>
 
+</div>
+
 <div align="left">
+
+<figure><img src="../.gitbook/assets/The Crypto Dog (1).png" alt="" width="125"><figcaption></figcaption></figure>
+
+</div>
+
+<div align="center">
 
 <figure><img src="../.gitbook/assets/WhalePanda (1).png" alt="" width="125"><figcaption></figcaption></figure>
 
 </div>
-
-<figure><img src="../.gitbook/assets/The Crypto Dog (1).png" alt="" width="125"><figcaption></figcaption></figure>
 
 <div align="right">
 
