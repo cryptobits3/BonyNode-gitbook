@@ -31,12 +31,12 @@
   * [Snapshot](mainnet/archway/snapshot.md)
   * [State sync](mainnet/archway/state-sync.md)
   * [Useful commands](mainnet/archway/useful-commands.md)
-* [💫 EMPOWER](mainnet/empower/README.md)
-  * [Page 10](mainnet/empower/page-10.md)
-  * [Page 9](mainnet/empower/page-9.md)
-  * [Page 8](mainnet/empower/page-8.md)
-  * [Page 7](mainnet/empower/page-7.md)
-  * [Page 6](mainnet/empower/page-6.md)
+* [💫 BLOKX](mainnet/blokx/README.md)
+  * [Installation](mainnet/blokx/installation.md)
+  * [Upgrade](mainnet/blokx/upgrade.md)
+  * [Snapshot](mainnet/blokx/snapshot.md)
+  * [State sync](mainnet/blokx/state-sync.md)
+  * [Useful commands](mainnet/blokx/useful-commands.md)
 
 ## Testnet
 
