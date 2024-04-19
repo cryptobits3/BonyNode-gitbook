@@ -31,12 +31,12 @@
   * [Snapshot](mainnet/archway/snapshot.md)
   * [State sync](mainnet/archway/state-sync.md)
   * [Useful commands](mainnet/archway/useful-commands.md)
-* [💫 BLOKX](mainnet/blokx/README.md)
-  * [Installation](mainnet/blokx/installation.md)
-  * [Upgrade](mainnet/blokx/upgrade.md)
-  * [Snapshot](mainnet/blokx/snapshot.md)
-  * [State sync](mainnet/blokx/state-sync.md)
-  * [Useful commands](mainnet/blokx/useful-commands.md)
+* [💫 BLOCKX](mainnet/blockx/README.md)
+  * [Installation](mainnet/blockx/installation.md)
+  * [Upgrade](mainnet/blockx/upgrade.md)
+  * [Snapshot](mainnet/blockx/snapshot.md)
+  * [State sync](mainnet/blockx/state-sync.md)
+  * [Useful commands](mainnet/blockx/useful-commands.md)
 
 ## Testnet
 
