@@ -14,11 +14,16 @@ $2 Million in MPX coins, which is 1.16% (100,000,000 MPX) of the total MPX coin 
 ### Things to Do in XFI Console Panel[​](https://services.anatolianteam.com/docs/Testnet/Cosmos-Ecosystem/crossfi/user-guide#things-to-do-in-xfi-console-panel) <a href="#things-to-do-in-xfi-console-panel" id="things-to-do-in-xfi-console-panel"></a>
 
 1. Go to [XFI Console](https://test.xficonsole.com/)
-2. Send MPX or XFI to the Cosmos part of the console to another Cosmos wallet address `mx1zlxdl376qfele4hgncdyd6y7a8du9wqqak47k3`
+2. Send MPX to the Cosmos part of the console to another Cosmos wallet address `mx1zlxdl376qfele4hgncdyd6y7a8du9wqqak47k3`\
+   Send XFI to the Cosmos part of the console to another Cosmos wallet address `mx1zlxdl376qfele4hgncdyd6y7a8du9wqqak47k3`
 3. Send XFI to the EVM part of the console to another EVM wallet address\
    `0x17CCDfc7Da0273fcd6e89E1a46E89EE9DbC2B800`
-4. Send XFI  and MPX  in one transaction\
-   `mx1zlxdl376qfele4hgncdyd6y7a8du9wqqak47k3`  XFI MPX
+4. Send XFI  to different two addresses \
+   `mx1zlxdl376qfele4hgncdyd6y7a8du9wqqak47k3` XFI\
+   `mx14ys8msj28zl20ng3k0yqq04phfrc9hyssyazen` XFI\
+   Send MPX  to different two addresses \
+   `mx1zlxdl376qfele4hgncdyd6y7a8du9wqqak47k3` MPX\
+   `mx14ys8msj28zl20ng3k0yqq04phfrc9hyssyazen` MPX
 5.  Send XFI and MPX to different two addresses in one transaction\
     `mx1zlxdl376qfele4hgncdyd6y7a8du9wqqak47k3` XFI MPX
 
