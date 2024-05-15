@@ -1,36 +1,20 @@
 # Snapshot
 
-![](https://raw.githubusercontent.com/kj89/cosmos-images/main/logos/babylon.png)
+### Snapshot <a href="#snap" id="snap"></a>
 
-Snapshots allows a new node to join the network by recovering application state from a backup file. Snapshot contains compressed copy of chain data directory. To keep backup files as small as plausible, snapshot server is periodically beeing state-synced.
+height: 106644 | 2h ago | size: 1.2GB | pruning: custom: 100/0/10 | indexer: null
 
-Snapshots are taken automatically every 6 hours starting at **11:30 UTC**
+```bash
+sudo systemctl stop junctiond
 
-| Pruning  | Indexer | Version Tag |
-| -------- | ------- | ----------- |
-| 100/0/19 | null    | v0.7.2      |
+cp $HOME/.junction/data/priv_validator_state.json $HOME/.junction/priv_validator_state.json.backup
 
-| Block  | Age     | Download                                                                                     |
-| ------ | ------- | -------------------------------------------------------------------------------------------- |
-| 314990 | 7 hours | [snapshot (0.85 GB)](https://snapshots.kjnodes.com/babylon-testnet/snapshot\_latest.tar.lz4) |
+rm -rf $HOME/.junction/data $HOME/.junction/wasmPath
+curl https://testnet-files.itrocket.net/airchains/snap_airchains.tar.lz4 | lz4 -dc - | tar -xf - -C $HOME/.junction
 
-#### Stop the service and reset the data <a href="#stop-the-service-and-reset-the-data" id="stop-the-service-and-reset-the-data"></a>
+mv $HOME/.junction/priv_validator_state.json.backup $HOME/.junction/data/priv_validator_state.json
 
-```
-sudo systemctl stop babylond
-cp $HOME/.babylond/data/priv_validator_state.json $HOME/.babylond/priv_validator_state.json.backup
-rm -rf $HOME/.babylond/data
+sudo systemctl restart junctiond && sudo journalctl -u junctiond -f
 ```
 
-#### Download latest snapshot <a href="#download-latest-snapshot" id="download-latest-snapshot"></a>
-
-```
-curl -L https://snapshots.kjnodes.com/babylon-testnet/snapshot_latest.tar.lz4 | tar -Ilz4 -xf - -C $HOME/.babylond
-mv $HOME/.babylond/priv_validator_state.json.backup $HOME/.babylond/data/priv_validator_state.json
-```
-
-#### Restart the service and check the log <a href="#restart-the-service-and-check-the-log" id="restart-the-service-and-check-the-log"></a>
-
-```
-sudo systemctl start babylond && sudo journalctl -u babylond -f --no-hostname -o cat
-```
+### &#x20;<a href="#sync" id="sync"></a>

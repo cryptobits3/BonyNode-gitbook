@@ -1,225 +1,202 @@
 # Installation
 
-![](https://raw.githubusercontent.com/kj89/cosmos-images/main/logos/babylon.png)
+### Manual Installation <a href="#installation" id="installation"></a>
 
-| Chain ID   | Latest Version Tag | Custom Port |
-| ---------- | ------------------ | ----------- |
-| bbn-test-2 | v0.7.2             | 164         |
+Official DocumentationRecommended Hardware: 4 Cores, 8GB RAM, 200GB of storage (NVME)
 
-#### Setup validator name <a href="#setup-validator-name" id="setup-validator-name"></a>
-
-Replace **YOUR\_MONIKER\_GOES\_HERE** with your validator name
-
-```
-MONIKER="YOUR_MONIKER_GOES_HERE"
+```bash
+# install dependencies, if needed
+sudo apt update && sudo apt upgrade -y
+sudo apt install curl git wget htop tmux build-essential jq make lz4 gcc unzip -y
 ```
 
-#### Install dependencies <a href="#install-dependencies" id="install-dependencies"></a>
+Node NameWalletPort
 
-**UPDATE SYSTEM AND INSTALL BUILD TOOLS**
-
-```
-sudo apt -q update
-sudo apt -qy install curl git jq lz4 build-essential
-sudo apt -qy upgrade
-```
-
-**INSTALL GO**
-
-```
-sudo rm -rf /usr/local/go
-curl -Ls https://go.dev/dl/go1.20.5.linux-amd64.tar.gz | sudo tar -xzf - -C /usr/local
-eval $(echo 'export PATH=$PATH:/usr/local/go/bin' | sudo tee /etc/profile.d/golang.sh)
-eval $(echo 'export PATH=$PATH:$HOME/go/bin' | tee -a $HOME/.profile)
-```
-
-#### Download and build binaries <a href="#download-and-build-binaries" id="download-and-build-binaries"></a>
-
-```
-# Clone project repository
+```bash
+# install go, if needed
 cd $HOME
-rm -rf babylon
-git clone https://github.com/babylonchain/babylon.git
-cd babylon
-git checkout v0.7.2
+VER="1.21.6"
+wget "https://golang.org/dl/go$VER.linux-amd64.tar.gz"
+sudo rm -rf /usr/local/go
+sudo tar -C /usr/local -xzf "go$VER.linux-amd64.tar.gz"
+rm "go$VER.linux-amd64.tar.gz"
+[ ! -f ~/.bash_profile ] && touch ~/.bash_profile
+echo "export PATH=$PATH:/usr/local/go/bin:~/go/bin" >> ~/.bash_profile
+source $HOME/.bash_profile
+[ ! -d ~/go/bin ] && mkdir -p ~/go/bin
 
-# Build binaries
-make build
+# set vars
+echo "export WALLET="wallet"" >> $HOME/.bash_profile
+echo "export MONIKER="test"" >> $HOME/.bash_profile
+echo "export AIRCHAIN_CHAIN_ID="junction"" >> $HOME/.bash_profile
+echo "export AIRCHAIN_PORT="19"" >> $HOME/.bash_profile
+source $HOME/.bash_profile
 
-# Prepare binaries for Cosmovisor
-mkdir -p $HOME/.babylond/cosmovisor/genesis/bin
-mv build/babylond $HOME/.babylond/cosmovisor/genesis/bin/
-rm -rf build
+# download binary
+cd $HOME
+wget -O junctiond https://github.com/airchains-network/junction/releases/download/v0.1.0/junctiond
+chmod +x junctiond
+mv junctiond $HOME/go/bin/
 
-# Create application symlinks
-sudo ln -s $HOME/.babylond/cosmovisor/genesis $HOME/.babylond/cosmovisor/current -f
-sudo ln -s $HOME/.babylond/cosmovisor/current/bin/babylond /usr/local/bin/babylond -f
-```
+# config and init app
+junctiond init $MONIKER --chain-id $AIRCHAIN_CHAIN_ID 
+sed -i -e "s|^node *=.*|node = \"tcp://localhost:${AIRCHAIN_PORT}657\"|" $HOME/.junction/config/client.toml
 
-#### Install Cosmovisor and create a service <a href="#install-cosmovisor-and-create-a-service" id="install-cosmovisor-and-create-a-service"></a>
+# download genesis and addrbook
+wget -O $HOME/.junction/config/genesis.json https://testnet-files.itrocket.net/airchains/genesis.json
+wget -O $HOME/.junction/config/addrbook.json https://testnet-files.itrocket.net/airchains/addrbook.json
 
-```
-# Download and install Cosmovisor
-go install cosmossdk.io/tools/cosmovisor/cmd/cosmovisor@v1.4.0
+# set seeds and peers
+SEEDS="04e2fdd6ec8f23729f24245171eaceae5219aa91@airchains-testnet-seed.itrocket.net:19656"
+PEERS="47f61921b54a652ca5241e2a7fc4ed8663091e89@airchains-testnet-peer.itrocket.net:19656,e78a440c57576f3743e6aa9db00438462980927e@5.161.199.115:26656,747b20b00224128bb3a3022cfa557fa105a8e41d@84.247.140.127:43456,f786dcc80601ddd33ba98c609795083ba418d740@158.220.119.11:43456,0b1159b05e940a611b275fe0006070439e5b6e69@[2a03:cfc0:8000:13::b910:277f]:13756,c8f6b1a795a6d9cd2ec39faf277163a9711fc81b@38.242.194.19:43456,552d2a5c3d9889444f123d740a20237c89711109@109.199.96.143:43456,cc27f4e54a78b950adaf46e5413f92f5d53d2212@209.126.86.186:43456,f5b69a02abeb3340ccd266f049ed6aabc7c0ea88@94.72.114.150:43456,43ab9af9fabe523a0a8794ae779100c50d1383e6@5.189.142.177:17656,db38d672f66df4de01b26e1fa97e1632fbfb1bdf@173.249.57.190:26656"
+sed -i -e "s/^seeds *=.*/seeds = \"$SEEDS\"/; s/^persistent_peers *=.*/persistent_peers = \"$PEERS\"/" $HOME/.junction/config/config.toml
 
-# Create service
-sudo tee /etc/systemd/system/babylond.service > /dev/null << EOF
+# set custom ports in app.toml
+sed -i.bak -e "s%:1317%:${AIRCHAIN_PORT}317%g;
+s%:8080%:${AIRCHAIN_PORT}080%g;
+s%:9090%:${AIRCHAIN_PORT}090%g;
+s%:9091%:${AIRCHAIN_PORT}091%g;
+s%:8545%:${AIRCHAIN_PORT}545%g;
+s%:8546%:${AIRCHAIN_PORT}546%g;
+s%:6065%:${AIRCHAIN_PORT}065%g" $HOME/.junction/config/app.toml
+
+# set custom ports in config.toml file
+sed -i.bak -e "s%:26658%:${AIRCHAIN_PORT}658%g;
+s%:26657%:${AIRCHAIN_PORT}657%g;
+s%:6060%:${AIRCHAIN_PORT}060%g;
+s%:26656%:${AIRCHAIN_PORT}656%g;
+s%^external_address = \"\"%external_address = \"$(wget -qO- eth0.me):${AIRCHAIN_PORT}656\"%;
+s%:26660%:${AIRCHAIN_PORT}660%g" $HOME/.junction/config/config.toml
+
+# config pruning
+sed -i -e "s/^pruning *=.*/pruning = \"custom\"/" $HOME/.junction/config/app.toml
+sed -i -e "s/^pruning-keep-recent *=.*/pruning-keep-recent = \"100\"/" $HOME/.junction/config/app.toml
+sed -i -e "s/^pruning-interval *=.*/pruning-interval = \"50\"/" $HOME/.junction/config/app.toml
+
+# set minimum gas price, enable prometheus and disable indexing
+sed -i 's|minimum-gas-prices =.*|minimum-gas-prices = "0.001amf"|g' $HOME/.junction/config/app.toml
+sed -i -e "s/prometheus = false/prometheus = true/" $HOME/.junction/config/config.toml
+sed -i -e "s/^indexer *=.*/indexer = \"null\"/" $HOME/.junction/config/config.toml
+
+# create service file
+sudo tee /etc/systemd/system/junctiond.service > /dev/null <<EOF
 [Unit]
-Description=babylon-testnet node service
+Description=Airchains node
 After=network-online.target
-
 [Service]
 User=$USER
-ExecStart=$(which cosmovisor) run start
+WorkingDirectory=$HOME/.junction
+ExecStart=$(which junctiond) start --home $HOME/.junction
 Restart=on-failure
-RestartSec=10
+RestartSec=5
 LimitNOFILE=65535
-Environment="DAEMON_HOME=$HOME/.babylond"
-Environment="DAEMON_NAME=babylond"
-Environment="UNSAFE_SKIP_BACKUP=true"
-Environment="PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:$HOME/.babylond/cosmovisor/current/bin"
-
 [Install]
 WantedBy=multi-user.target
 EOF
+
+# reset and download snapshot
+junctiond tendermint unsafe-reset-all --home $HOME/.junction
+if curl -s --head curl https://testnet-files.itrocket.net/airchains/snap_airchains.tar.lz4 | head -n 1 | grep "200" > /dev/null; then
+  curl https://testnet-files.itrocket.net/airchains/snap_airchains.tar.lz4 | lz4 -dc - | tar -xf - -C $HOME/.junction
+    else
+  echo no have snap
+fi
+
+# enable and start service
 sudo systemctl daemon-reload
-sudo systemctl enable babylond
+sudo systemctl enable junctiond
+sudo systemctl restart junctiond && sudo journalctl -u junctiond -f
 ```
 
-#### Initialize the node <a href="#initialize-the-node" id="initialize-the-node"></a>
+### Automatic Installation <a href="#auto-installation" id="auto-installation"></a>
 
-```
-# Set node configuration
-babylond config chain-id bbn-test-2
-babylond config keyring-backend test
-babylond config node tcp://localhost:16457
+pruning: custom: 100/0/10 | indexer: null
 
-# Initialize the node
-babylond init $MONIKER --chain-id bbn-test-2
-
-# Download genesis and addrbook
-curl -Ls https://snapshots.kjnodes.com/babylon-testnet/genesis.json > $HOME/.babylond/config/genesis.json
-curl -Ls https://snapshots.kjnodes.com/babylon-testnet/addrbook.json > $HOME/.babylond/config/addrbook.json
-
-# Add seeds
-sed -i -e "s|^seeds *=.*|seeds = \"3f472746f46493309650e5a033076689996c8881@babylon-testnet.rpc.kjnodes.com:16459\"|" $HOME/.babylond/config/config.toml
-
-# Set minimum gas price
-sed -i -e "s|^minimum-gas-prices *=.*|minimum-gas-prices = \"0.00001ubbn\"|" $HOME/.babylond/config/app.toml
-
-# Set pruning
-sed -i \
-  -e 's|^pruning *=.*|pruning = "custom"|' \
-  -e 's|^pruning-keep-recent *=.*|pruning-keep-recent = "100"|' \
-  -e 's|^pruning-keep-every *=.*|pruning-keep-every = "0"|' \
-  -e 's|^pruning-interval *=.*|pruning-interval = "19"|' \
-  $HOME/.babylond/config/app.toml
-
-# Set custom ports
-sed -i -e "s%^proxy_app = \"tcp://127.0.0.1:26658\"%proxy_app = \"tcp://127.0.0.1:16458\"%; s%^laddr = \"tcp://127.0.0.1:26657\"%laddr = \"tcp://127.0.0.1:16457\"%; s%^pprof_laddr = \"localhost:6060\"%pprof_laddr = \"localhost:16460\"%; s%^laddr = \"tcp://0.0.0.0:26656\"%laddr = \"tcp://0.0.0.0:16456\"%; s%^prometheus_listen_addr = \":26660\"%prometheus_listen_addr = \":16466\"%" $HOME/.babylond/config/config.toml
-sed -i -e "s%^address = \"tcp://localhost:1317\"%address = \"tcp://0.0.0.0:16417\"%; s%^address = \":8080\"%address = \":16480\"%; s%^address = \"localhost:9090\"%address = \"0.0.0.0:16490\"%; s%^address = \"localhost:9091\"%address = \"0.0.0.0:16491\"%; s%:8545%:16445%; s%:8546%:16446%; s%:6065%:16465%" $HOME/.babylond/config/app.toml
+```bash
+source <(curl -s https://itrocket.net/api/testnet/airchains/autoinstall/)
 ```
 
-#### Download latest chain snapshot <a href="#download-latest-chain-snapshot" id="download-latest-chain-snapshot"></a>
+### Create wallet <a href="#create-wallet" id="create-wallet"></a>
 
-```
-curl -L https://snapshots.kjnodes.com/babylon-testnet/snapshot_latest.tar.lz4 | tar -Ilz4 -xf - -C $HOME/.babylond
-[[ -f $HOME/.babylond/data/upgrade-info.json ]] && cp $HOME/.babylond/data/upgrade-info.json $HOME/.babylond/cosmovisor/genesis/upgrade-info.json
-```
+```bash
+# to create a new wallet, use the following command. don’t forget to save the mnemonic
+junctiond keys add $WALLET
 
-#### Start service and check the logs <a href="#start-service-and-check-the-logs" id="start-service-and-check-the-logs"></a>
+# to restore exexuting wallet, use the following command
+junctiond keys add $WALLET --recover
 
-```
-sudo systemctl start babylond && sudo journalctl -u babylond -f --no-hostname -o cat
-```
+# save wallet and validator address
+WALLET_ADDRESS=$(junctiond keys show $WALLET -a)
+VALOPER_ADDRESS=$(junctiond keys show $WALLET --bech val -a)
+echo "export WALLET_ADDRESS="$WALLET_ADDRESS >> $HOME/.bash_profile
+echo "export VALOPER_ADDRESS="$VALOPER_ADDRESS >> $HOME/.bash_profile
+source $HOME/.bash_profile
 
-### Becoming a Validator <a href="#becoming-a-validator" id="becoming-a-validator"></a>
+# check sync status, once your node is fully synced, the output from above will print "false"
+junctiond status 2>&1 | jq 
 
-#### 1. Create a Keyring and Get Funds <a href="#1-create-a-keyring-and-get-funds" id="1-create-a-keyring-and-get-funds"></a>
-
-Validators are required to have funds for two reasons:
-
-* They need to provide a self delegation
-* They need to pay for transaction fees for submitting BLS signature transactions
-
-Currently, validators can only use the test keyring backend. In the future, Babylon will support other types of encrypted backends provided by the Cosmos SDK for validators.
-
-**ADD NEW KEY**
-
-```
-babylond keys add wallet
+# before creating a validator, you need to fund your wallet and check balance
+junctiond query bank balances $WALLET_ADDRESS 
 ```
 
-**(OPTIONAL) RECOVER EXISTING KEY**
+### Create validator <a href="#create-validator" id="create-validator"></a>
 
-```
-babylond keys add wallet --recover
-```
+MonikerIdentityDetailsAmount, amfCommission rateCommission max rateCommission max change rateWebsite
 
-**REQUEST FUNDS FROM THE BABYLON TESTNET FAUCET**
-
-This can be accomplished by going to the `#faucet` channel of [official Discord server](https://discord.gg/babylonglobal) to request funds by providing the address you created before. After joining the channel, users send a request starting with `!faucet` followed by the request address. For example, `!faucet bbn1sajf5fd7tyjt0jjy6lqzahy09jl2nkcnx5qm06`
-
-#### 2. Create a BLS key <a href="#2-create-a-bls-key" id="2-create-a-bls-key"></a>
-
-Validators are expected to submit a BLS signature at the end of each epoch. To do that, a validator needs to have a BLS key pair to sign information with.
-
-Using the address that you created on the previous step.
-
-```
-babylond create-bls-key $(babylond keys show wallet -a)
-```
-
-This command will create a BLS key and add it to the `$HOME/.babylond/config/priv_validator_key.json`. This is the same file that stores the private key that the validator uses to sign blocks. Please ensure that this file is secured properly.
-
-After creating a BLS key, you need to restart your node to load this key into memory.
-
-```
-sudo systemctl restart babylond
-```
-
-#### 3. Modify the Configuration <a href="#3-modify-the-configuration" id="3-modify-the-configuration"></a>
-
-Furthermore, you need to specify the name of the key that the validator will be using to submit BLS signature transactions under the `$HOME/.babylond/config/app.toml` file. Edit this file and set the key name to the one that holds funds on your keyring:
-
-```
-sed -i -e "s|^key-name *=.*|key-name = \"wallet\"|" $HOME/.babylond/config/app.toml
+```bash
+cd $HOME
+# Create validator.json file
+echo "{\"pubkey\":{\"@type\":\"/cosmos.crypto.ed25519.PubKey\",\"key\":\"$(junctiond comet show-validator | grep -Po '\"key\":\s*\"\K[^"]*')\"},
+    \"amount\": \"1000000amf\",
+    \"moniker\": \"test\",
+    \"identity\": \"\",
+    \"website\": \"\",
+    \"security\": \"\",
+    \"details\": \"I love blockchain ❤️\",
+    \"commission-rate\": \"0.1\",
+    \"commission-max-rate\": \"0.2\",
+    \"commission-max-change-rate\": \"0.01\",
+    \"min-self-delegation\": \"1\"
+}" > validator.json
+# Create a validator using the JSON configuration
+junctiond tx staking create-validator validator.json \
+    --from $WALLET \
+    --chain-id junction \
+	--fees 200amf \
+	
 ```
 
-Finally, it is strongly recommended to modify the timeout\_commit value under `$HOME/.babylond/config/config.toml`. This value specifies how long a validator will wait before commiting a block before starting on a new height. Given that Babylon aims to have a 10 second time between blocks, set this value to:
+### Monitoring <a href="#monitoring" id="monitoring"></a>
 
-```
-sed -i -e "s|^timeout_commit *=.*|timeout_commit = \"10s\"|" $HOME/.babylond/config/config.toml
-```
+If you want to have set up a monitoring and alert system use [our cosmos nodes monitoring guide with tenderduty](https://teletype.in/@itrocket/bdJAHvC\_q8h)
 
-#### 4. Create the Validator <a href="#4-create-the-validator" id="4-create-the-validator"></a>
+### Security <a href="#security" id="security"></a>
 
-Contrary to a vanilla Cosmos SDK chain, a validator for Babylon is created through the `babylond tx checkpointing create-validator` command. This command expects that a BLS validator key exists under the `$HOME/.babylond/config/priv_validator_key.json`.
+To protect you keys please don\`t share your privkey, mnemonic and follow a basic security rules
 
-Babylon validators are required to submit a BLS signature transaction every epoch (with current parameters every \~30mins). Those transactions currently cost a static gas fee of `100ubbn`. Therefore, it is important that validators maintain enough unbonded funds in their keyring to pay for those transaction fees.
+#### Set up ssh keys for authentication <a href="#ssh" id="ssh"></a>
 
-```
-# Please make sure you have adjusted **moniker**, **identity**, **details** and **website** to match your values.
+You can use this [guide](https://www.digitalocean.com/community/tutorials/how-to-set-up-ssh-keys-on-ubuntu-20-04) to configure ssh authentication and disable password authentication on your server
 
-babylond tx checkpointing create-validator \
---amount 1000000ubbn \
---pubkey $(babylond tendermint show-validator) \
---moniker "YOUR_MONIKER_NAME" \
---identity "YOUR_KEYBASE_ID" \
---details "YOUR_DETAILS" \
---website "YOUR_WEBSITE_URL" \
---chain-id bbn-test-2 \
---commission-rate 0.05 \
---commission-max-rate 0.20 \
---commission-max-change-rate 0.01 \
---min-self-delegation 1 \
---from wallet \
---gas-adjustment 1.4 \
---gas auto \
---gas-prices 0.00001ubbn \
--y
+#### Firewall security <a href="#firewall" id="firewall"></a>
+
+Set the default to allow outgoing connections, deny all incoming, allow ssh and node p2p port
+
+```bash
+sudo ufw default allow outgoing 
+sudo ufw default deny incoming 
+sudo ufw allow ssh/tcp 
+sudo ufw allow ${AIRCHAIN_PORT}656/tcp
+sudo ufw enable
 ```
 
-Note: In order to become an active validator, you need to have more `ubbn` tokens bonded than the last validator ordered by the tokens bonded (or the validator set to not be full) as well as have at least `10000000ubbn` bonded.
+### Delete node <a href="#delete" id="delete"></a>
 
-Congrats! You are now a validator on the Babylon system.
+```bash
+sudo systemctl stop junctiond
+sudo systemctl disable junctiond
+sudo rm -rf /etc/systemd/system/junctiond.service
+sudo rm $(which junctiond)
+sudo rm -rf $HOME/.junction
+sed -i "/AIRCHAIN_/d" $HOME/.bash_profile
+```

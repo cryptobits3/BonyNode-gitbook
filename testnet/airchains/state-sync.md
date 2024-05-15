@@ -1,47 +1,37 @@
 # State sync
 
-![](https://raw.githubusercontent.com/kj89/cosmos-images/main/logos/babylon.png)
+### State Sync <a href="#sync" id="sync"></a>
 
-State Sync allows a new node to join the network by fetching a snapshot of the application state at a recent height instead of fetching and replaying all historical blocks. Since the application state is generally much smaller than the blocks, and restoring it is much faster than replaying blocks, this can reduce the time to sync with the network from days to minutes.
+If you don't want to wait for a long synchronization you can use:
 
-#### Stop the service and reset the data <a href="#stop-the-service-and-reset-the-data" id="stop-the-service-and-reset-the-data"></a>
+```bash
+sudo systemctl stop junctiond
 
-```
-sudo systemctl stop babylond
-cp $HOME/.babylond/data/priv_validator_state.json $HOME/.babylond/priv_validator_state.json.backup
-babylond tendermint unsafe-reset-all --keep-addr-book --home $HOME/.babylond
-```
+cp $HOME/.junction/data/priv_validator_state.json $HOME/.junction/priv_validator_state.json.backup
+junctiond tendermint unsafe-reset-all --home $HOME/.junction
 
-#### Get and configure the state sync information <a href="#get-and-configure-the-state-sync-information" id="get-and-configure-the-state-sync-information"></a>
+peers="47f61921b54a652ca5241e2a7fc4ed8663091e89@airchains-testnet-peer.itrocket.net:19656,e78a440c57576f3743e6aa9db00438462980927e@5.161.199.115:26656,747b20b00224128bb3a3022cfa557fa105a8e41d@84.247.140.127:43456,f786dcc80601ddd33ba98c609795083ba418d740@158.220.119.11:43456,0b1159b05e940a611b275fe0006070439e5b6e69@[2a03:cfc0:8000:13::b910:277f]:13756,c8f6b1a795a6d9cd2ec39faf277163a9711fc81b@38.242.194.19:43456,552d2a5c3d9889444f123d740a20237c89711109@109.199.96.143:43456,cc27f4e54a78b950adaf46e5413f92f5d53d2212@209.126.86.186:43456,f5b69a02abeb3340ccd266f049ed6aabc7c0ea88@94.72.114.150:43456,43ab9af9fabe523a0a8794ae779100c50d1383e6@5.189.142.177:17656,db38d672f66df4de01b26e1fa97e1632fbfb1bdf@173.249.57.190:26656"  
+SNAP_RPC="https://airchains-testnet-rpc.itrocket.net:443"
 
-```
-STATE_SYNC_RPC=https://babylon-testnet.rpc.kjnodes.com:443
-STATE_SYNC_PEER=d5519e378247dfb61dfe90652d1fe3e2b3005a5b@babylon-testnet.rpc.kjnodes.com:16456
-LATEST_HEIGHT=$(curl -s $STATE_SYNC_RPC/block | jq -r .result.block.header.height)
-SYNC_BLOCK_HEIGHT=$(($LATEST_HEIGHT - 1000))
-SYNC_BLOCK_HASH=$(curl -s "$STATE_SYNC_RPC/block?height=$SYNC_BLOCK_HEIGHT" | jq -r .result.block_id.hash)
+sed -i.bak -e "s/^persistent_peers *=.*/persistent_peers = \"$peers\"/" $HOME/.junction/config/config.toml 
 
-sed -i \
-  -e "s|^enable *=.*|enable = true|" \
-  -e "s|^rpc_servers *=.*|rpc_servers = \"$STATE_SYNC_RPC,$STATE_SYNC_RPC\"|" \
-  -e "s|^trust_height *=.*|trust_height = $SYNC_BLOCK_HEIGHT|" \
-  -e "s|^trust_hash *=.*|trust_hash = \"$SYNC_BLOCK_HASH\"|" \
-  -e "s|^persistent_peers *=.*|persistent_peers = \"$STATE_SYNC_PEER\"|" \
-  $HOME/.babylond/config/config.toml
+LATEST_HEIGHT=$(curl -s $SNAP_RPC/block | jq -r .result.block.header.height);
+BLOCK_HEIGHT=$((LATEST_HEIGHT - 1000));
+TRUST_HASH=$(curl -s "$SNAP_RPC/block?height=$BLOCK_HEIGHT" | jq -r .result.block_id.hash) 
 
-mv $HOME/.babylond/priv_validator_state.json.backup $HOME/.babylond/data/priv_validator_state.json
-```
+echo $LATEST_HEIGHT $BLOCK_HEIGHT $TRUST_HASH && sleep 2
 
-#### Download latest wasm <a href="#download-latest-wasm" id="download-latest-wasm"></a>
+sed -i.bak -E "s|^(enable[[:space:]]+=[[:space:]]+).*$|\1true| ;
+s|^(rpc_servers[[:space:]]+=[[:space:]]+).*$|\1\"$SNAP_RPC,$SNAP_RPC\"| ;
+s|^(trust_height[[:space:]]+=[[:space:]]+).*$|\1$BLOCK_HEIGHT| ;
+s|^(trust_hash[[:space:]]+=[[:space:]]+).*$|\1\"$TRUST_HASH\"| ;
+s|^(seeds[[:space:]]+=[[:space:]]+).*$|\1\"\"|" $HOME/.junction/config/config.toml
 
-Currently state sync does not support copy of the `wasm` folder. Therefore, you will have to download it manually.
+mv $HOME/.junction/priv_validator_state.json.backup $HOME/.junction/data/priv_validator_state.json
 
-```
-curl -L https://snapshots.kjnodes.com/babylon-testnet/wasm_latest.tar.lz4 | lz4 -dc - | tar -xf - -C $HOME/.babylond
+sudo systemctl restart junctiond && sudo journalctl -u junctiond -f
 ```
 
-#### Restart the service and check the log <a href="#restart-the-service-and-check-the-log" id="restart-the-service-and-check-the-log"></a>
+### Wasm <a href="#wasm" id="wasm"></a>
 
-```
-sudo systemctl start babylond && sudo journalctl -u babylond -f --no-hostname -o cat
-```
+Sorry, this project does not support WebAssembly.

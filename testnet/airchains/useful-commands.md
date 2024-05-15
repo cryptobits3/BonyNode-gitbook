@@ -1,370 +1,287 @@
 # Useful commands
 
-![](https://raw.githubusercontent.com/kj89/cosmos-images/main/logos/babylon.png)
+### Service operations ⚙️ <a href="#service-operations" id="service-operations"></a>
 
-### 🔑 Key management <a href="#key-management" id="key-management"></a>
+Check logs
 
-**ADD NEW KEY**
-
-```
-babylond keys add wallet
+```bash
+sudo journalctl -u junctiond -f
 ```
 
-**RECOVER EXISTING KEY**
+Start service
 
-```
-babylond keys add wallet --recover
-```
-
-**CREATE A BLS KEY**
-
-Validators are expected to submit a BLS signature at the end of each epoch. To do that, a validator needs to have a BLS key pair to sign information with.
-
-Using the address that you created on the previous step.
-
-```
-babylond create-bls-key $(babylond keys show wallet -a)
+```bash
+sudo systemctl start junctiond
 ```
 
-This command will create a BLS key and add it to the `$HOME/.babylond/config/priv_validator_key.json`. This is the same file that stores the private key that the validator uses to sign blocks. Please ensure that this file is secured properly.
+Stop service
 
-After creating a BLS key, you need to restart your node to load this key into memory.
-
-```
-sudo systemctl restart babylond
+```bash
+sudo systemctl stop junctiond
 ```
 
-**LIST ALL KEYS**
+Restart service
 
-```
-babylond keys list
-```
-
-**DELETE KEY**
-
-```
-babylond keys delete wallet
+```bash
+sudo systemctl restart junctiond
 ```
 
-**EXPORT KEY TO THE FILE**
+Check service status
 
-```
-babylond keys export wallet
-```
-
-**IMPORT KEY FROM THE FILE**
-
-```
-babylond keys import wallet wallet.backup
+```bash
+sudo systemctl status junctiond
 ```
 
-**QUERY WALLET BALANCE**
+Reload services
 
+```bash
+sudo systemctl daemon-reload
 ```
-babylond q bank balances $(babylond keys show wallet -a)
+
+Enable Service
+
+```bash
+sudo systemctl enable junctiond
 ```
 
-### 👷 Validator management <a href="#validator-management" id="validator-management"></a>
+Disable Service
 
-Please make sure you have adjusted **moniker**, **identity**, **details** and **website** to match your values.
-
-**CREATE NEW VALIDATOR**
-
+```bash
+sudo systemctl disable junctiond
 ```
-babylond tx checkpointing create-validator \
---amount 1000000ubbn \
---pubkey $(babylond tendermint show-validator) \
---moniker "YOUR_MONIKER_NAME" \
---identity "YOUR_KEYBASE_ID" \
---details "YOUR_DETAILS" \
---website "YOUR_WEBSITE_URL" \
---chain-id bbn-test-2 \
---commission-rate 0.05 \
---commission-max-rate 0.20 \
+
+Node info
+
+```bash
+junctiond status 2>&1 | jq
+```
+
+Your node peer
+
+```bash
+echo $(junctiond tendermint show-node-id)'@'$(wget -qO- eth0.me)':'$(cat $HOME/.junction/config/config.toml | sed -n '/Address to listen for incoming connection/{n;p;}' | sed 's/.*://; s/".*//')
+```
+
+### Key management <a href="#key-management" id="key-management"></a>
+
+Add New Wallet
+
+```bash
+junctiond keys add $WALLET
+```
+
+Restore executing wallet
+
+```bash
+junctiond keys add $WALLET --recover
+```
+
+List All Wallets
+
+```bash
+junctiond keys list
+```
+
+Delete wallet
+
+```bash
+junctiond keys delete $WALLET
+```
+
+Check Balance
+
+```bash
+junctiond q bank balances $WALLET_ADDRESS 
+```
+
+Export Key (save to wallet.backup)
+
+```bash
+junctiond keys export $WALLET
+```
+
+View EVM Prived Key
+
+```bash
+junctiond keys unsafe-export-eth-key $WALLET
+```
+
+Import Key (restore from wallet.backup)
+
+```bash
+junctiond keys import $WALLET wallet.backup
+```
+
+### Tokens <a href="#tokens" id="tokens"></a>
+
+To valoper addressTo wallet addressAmount, amf
+
+Withdraw all rewards
+
+```bash
+junctiond tx distribution withdraw-all-rewards --from $WALLET --chain-id junction --fees 200amf 
+```
+
+Withdraw rewards and commission from your validator
+
+```bash
+junctiond tx distribution withdraw-rewards $VALOPER_ADDRESS --from $WALLET --commission --chain-id junction --fees 200amf -y 
+```
+
+Check your balance
+
+```bash
+junctiond query bank balances $WALLET_ADDRESS
+```
+
+Delegate to Yourself
+
+```bash
+junctiond tx staking delegate $(junctiond keys show $WALLET --bech val -a) 1000000amf --from $WALLET --chain-id junction --fees 200amf -y 
+```
+
+Delegate
+
+```bash
+junctiond tx staking delegate <TO_VALOPER_ADDRESS> 1000000amf --from $WALLET --chain-id junction --fees 200amf -y 	
+```
+
+Redelegate Stake to Another Validator
+
+```bash
+junctiond tx staking redelegate $VALOPER_ADDRESS <TO_VALOPER_ADDRESS> 1000000amf --from $WALLET --chain-id junction --fees 200amf -y 
+```
+
+Unbond
+
+```bash
+junctiond tx staking unbond $(junctiond keys show $WALLET --bech val -a) 1000000amf --from $WALLET --chain-id junction --fees 200amf -y 
+```
+
+Transfer Funds
+
+```bash
+junctiond tx bank send $WALLET_ADDRESS <TO_WALLET_ADDRESS> 1000000amf --fees 200amf -y 
+```
+
+### Validator operations <a href="#validator-operations" id="validator-operations"></a>
+
+MonikerIdentityDetailsAmount, amfCommission rateCommission max rateCommission max change rate
+
+Create New Validator
+
+```bash
+junctiond tx staking create-validator \
+--amount 1000000amf \
+--from $WALLET \
+--commission-rate 0.1 \
+--commission-max-rate 0.2 \
 --commission-max-change-rate 0.01 \
 --min-self-delegation 1 \
---from wallet \
---gas-adjustment 1.4 \
---gas auto \
---fees 10ubbn \
--y
+--pubkey $(junctiond tendermint show-validator) \
+--moniker "$MONIKER" \
+--identity "" \
+--details "I love blockchain ❤️" \
+--chain-id junction \
+--fees 200amf \
+-y 
 ```
 
-**EDIT EXISTING VALIDATOR**
+Edit Existing Validator
 
+```bash
+junctiond tx staking edit-validator \
+--commission-rate 0.1 \
+--new-moniker "$MONIKER" \
+--identity "" \
+--details "I love blockchain ❤️" \
+--from $WALLET \
+--chain-id junction \
+--fees 200amf \
+-y 
 ```
-babylond tx checkpointing edit-validator \
---new-moniker "YOUR_MONIKER_NAME" \
---identity "YOUR_KEYBASE_ID" \
---details "YOUR_DETAILS" \
---website "YOUR_WEBSITE_URL" \
---chain-id bbn-test-2 \
---commission-rate 0.05 \
---from wallet \
---gas-adjustment 1.4 \
---gas auto \
---fees 10ubbn \
--y
-```
-
-**UNJAIL VALIDATOR**
-
-```
-babylond tx slashing unjail --from wallet --chain-id bbn-test-2 --gas-adjustment 1.4 --gas auto --fees 10ubbn -y
-```
-
-**JAIL REASON**
-
-```
-babylond query slashing signing-info $(babylond tendermint show-validator)
-```
-
-**LIST ALL ACTIVE VALIDATORS**
-
-```
-babylond q staking validators -oj --limit=3000 | jq '.validators[] | select(.status=="BOND_STATUS_BONDED")' | jq -r '(.tokens|tonumber/pow(10; 6)|floor|tostring) + " \t " + .description.moniker' | sort -gr | nl
-```
-
-**LIST ALL INACTIVE VALIDATORS**
-
-```
-babylond q staking validators -oj --limit=3000 | jq '.validators[] | select(.status=="BOND_STATUS_UNBONDED")' | jq -r '(.tokens|tonumber/pow(10; 6)|floor|tostring) + " \t " + .description.moniker' | sort -gr | nl
-```
-
-**VIEW VALIDATOR DETAILS**
-
-```
-babylond q staking validator $(babylond keys show wallet --bech val -a)
-```
-
-### 💲 Token management <a href="#token-management" id="token-management"></a>
-
-**WITHDRAW REWARDS FROM ALL VALIDATORS**
-
-```
-babylond tx distribution withdraw-all-rewards --from wallet --chain-id bbn-test-2 --gas-adjustment 1.4 --gas auto --fees 10ubbn -y
-```
-
-**WITHDRAW COMMISSION AND REWARDS FROM YOUR VALIDATOR**
-
-```
-babylond tx distribution withdraw-rewards $(babylond keys show wallet --bech val -a) --commission --from wallet --chain-id bbn-test-2 --gas-adjustment 1.4 --gas auto --fees 10ubbn -y
-```
-
-**DELEGATE TOKENS TO YOURSELF**
-
-```
-babylond tx epoching delegate $(babylond keys show wallet --bech val -a) 1000000ubbn --from wallet --chain-id bbn-test-2 --gas-adjustment 1.4 --gas auto --fees 10ubbn -y
-```
-
-**DELEGATE TOKENS TO VALIDATOR**
-
-```
-babylond tx epoching delegate <TO_VALOPER_ADDRESS> 1000000ubbn --from wallet --chain-id bbn-test-2 --gas-adjustment 1.4 --gas auto --fees 10ubbn -y
-```
-
-**REDELEGATE TOKENS TO ANOTHER VALIDATOR**
-
-```
-babylond tx epoching redelegate $(babylond keys show wallet --bech val -a) <TO_VALOPER_ADDRESS> 1000000ubbn --from wallet --chain-id bbn-test-2 --gas-adjustment 1.4 --gas auto --fees 10ubbn -y
-```
-
-**UNBOND TOKENS FROM YOUR VALIDATOR**
-
-```
-babylond tx epoching unbond $(babylond keys show wallet --bech val -a) 1000000ubbn --from wallet --chain-id bbn-test-2 --gas-adjustment 1.4 --gas auto --fees 10ubbn -y
-```
-
-**SEND TOKENS TO THE WALLET**
-
-```
-babylond tx bank send wallet <TO_WALLET_ADDRESS> 1000000ubbn --from wallet --chain-id bbn-test-2 --gas-adjustment 1.4 --gas auto --fees 10ubbn -y
-```
-
-### 🗳 Governance <a href="#governance" id="governance"></a>
-
-**LIST ALL PROPOSALS**
-
-```
-babylond query gov proposals
-```
-
-**VIEW PROPOSAL BY ID**
-
-```
-babylond query gov proposal 1
-```
-
-**VOTE ‘YES’**
-
-```
-babylond tx gov vote 1 yes --from wallet --chain-id bbn-test-2 --gas-adjustment 1.4 --gas auto --fees 10ubbn -y
-```
-
-**VOTE ‘NO’**
-
-```
-babylond tx gov vote 1 no --from wallet --chain-id bbn-test-2 --gas-adjustment 1.4 --gas auto --fees 10ubbn -y
-```
-
-**VOTE ‘ABSTAIN’**
-
-```
-babylond tx gov vote 1 abstain --from wallet --chain-id bbn-test-2 --gas-adjustment 1.4 --gas auto --fees 10ubbn -y
-```
-
-**VOTE ‘NOWITHVETO’**
-
-```
-babylond tx gov vote 1 NoWithVeto --from wallet --chain-id bbn-test-2 --gas-adjustment 1.4 --gas auto --fees 10ubbn -y
-```
-
-### ⚡️ Utility <a href="#utility" id="utility"></a>
-
-**UPDATE PORTS**
-
-```
-CUSTOM_PORT=110
-sed -i -e "s%^proxy_app = \"tcp://127.0.0.1:26658\"%proxy_app = \"tcp://127.0.0.1:${CUSTOM_PORT}58\"%; s%^laddr = \"tcp://127.0.0.1:26657\"%laddr = \"tcp://127.0.0.1:${CUSTOM_PORT}57\"%; s%^pprof_laddr = \"localhost:6060\"%pprof_laddr = \"localhost:${CUSTOM_PORT}60\"%; s%^laddr = \"tcp://0.0.0.0:26656\"%laddr = \"tcp://0.0.0.0:${CUSTOM_PORT}56\"%; s%^prometheus_listen_addr = \":26660\"%prometheus_listen_addr = \":${CUSTOM_PORT}66\"%" $HOME/.babylond/config/config.toml
-sed -i -e "s%^address = \"tcp://0.0.0.0:1317\"%address = \"tcp://0.0.0.0:${CUSTOM_PORT}17\"%; s%^address = \":8080\"%address = \":${CUSTOM_PORT}80\"%; s%^address = \"0.0.0.0:9090\"%address = \"0.0.0.0:${CUSTOM_PORT}90\"%; s%^address = \"0.0.0.0:9091\"%address = \"0.0.0.0:${CUSTOM_PORT}91\"%" $HOME/.babylond/config/app.toml
-```
-
-**UPDATE INDEXER**
-
-**Disable indexer**
-
-```
-sed -i -e 's|^indexer *=.*|indexer = "null"|' $HOME/.babylond/config/config.toml
-```
-
-**Enable indexer**
-
-```
-sed -i -e 's|^indexer *=.*|indexer = "kv"|' $HOME/.babylond/config/config.toml
-```
-
-**UPDATE PRUNING**
-
-```
-sed -i \
-  -e 's|^pruning *=.*|pruning = "custom"|' \
-  -e 's|^pruning-keep-recent *=.*|pruning-keep-recent = "100"|' \
-  -e 's|^pruning-keep-every *=.*|pruning-keep-every = "0"|' \
-  -e 's|^pruning-interval *=.*|pruning-interval = "19"|' \
-  $HOME/.babylond/config/app.toml
-```
 
-### 🚨 Maintenance <a href="#maintenance" id="maintenance"></a>
+Validator info
 
-**GET VALIDATOR INFO**
-
-```
-babylond status 2>&1 | jq .ValidatorInfo
-```
-
-**GET SYNC INFO**
-
-```
-babylond status 2>&1 | jq .SyncInfo
-```
-
-**GET NODE PEER**
-
-```
-echo $(babylond tendermint show-node-id)'@'$(curl -s ifconfig.me)':'$(cat $HOME/.babylond/config/config.toml | sed -n '/Address to listen for incoming connection/{n;p;}' | sed 's/.*://; s/".*//')
-```
-
-**CHECK IF VALIDATOR KEY IS CORRECT**
-
-```
-[[ $(babylond q staking validator $(babylond keys show wallet --bech val -a) -oj | jq -r .consensus_pubkey.key) = $(babylond status | jq -r .ValidatorInfo.PubKey.value) ]] && echo -e "\n\e[1m\e[32mTrue\e[0m\n" || echo -e "\n\e[1m\e[31mFalse\e[0m\n"
+```bash
+junctiond status 2>&1 | jq
 ```
 
-**GET LIVE PEERS**
+Validator Details
 
+```bash
+junctiond q staking validator $(junctiond keys show $WALLET --bech val -a) 
 ```
-curl -sS http://localhost:16457/net_info | jq -r '.result.peers[] | "\(.node_info.id)@\(.remote_ip):\(.node_info.listen_addr)"' | awk -F ':' '{print $1":"$(NF)}'
-```
 
-**SET MINIMUM GAS PRICE**
+Jailing info
 
-```
-sed -i -e "s/^minimum-gas-prices *=.*/minimum-gas-prices = \"0.00001ubbn\"/" $HOME/.babylond/config/app.toml
+```bash
+junctiond q slashing signing-info $(junctiond tendermint show-validator) 
 ```
 
-**ENABLE PROMETHEUS**
+Slashing parameters
 
+```bash
+junctiond q slashing params 
 ```
-sed -i -e "s/prometheus = false/prometheus = true/" $HOME/.babylond/config/config.toml
-```
 
-**RESET CHAIN DATA**
+Unjail validator
 
-```
-babylond tendermint unsafe-reset-all --keep-addr-book --home $HOME/.babylond --keep-addr-book
+```bash
+junctiond tx slashing unjail --from $WALLET --chain-id junction --fees 200amf -y 
 ```
 
-**REMOVE NODE**
+Active Validators List
 
-Please, before proceeding with the next step! All chain data will be lost! Make sure you have backed up your **priv\_validator\_key.json**!
-
-```
-cd $HOME
-sudo systemctl stop babylond
-sudo systemctl disable babylond
-sudo rm /etc/systemd/system/babylond.service
-sudo systemctl daemon-reload
-rm -f $(which babylond)
-rm -rf $HOME/.babylond
-rm -rf $HOME/babylon
+```bash
+junctiond q staking validators -oj --limit=2000 | jq '.validators[] | select(.status=="BOND_STATUS_BONDED")' | jq -r '(.tokens|tonumber/pow(10; 6)|floor|tostring) + " 	 " + .description.moniker' | sort -gr | nl 
 ```
 
-### ⚙️ Service Management <a href="#service-management" id="service-management"></a>
+Check Validator key
 
-**RELOAD SERVICE CONFIGURATION**
-
-```
-sudo systemctl daemon-reload
+```bash
+[[ $(junctiond q staking validator $VALOPER_ADDRESS -oj | jq -r .consensus_pubkey.key) = $(junctiond status | jq -r .ValidatorInfo.PubKey.value) ]] && echo -e "Your key status is ok" || echo -e "Your key status is error"
 ```
 
-**ENABLE SERVICE**
+Signing info
 
+```bash
+junctiond q slashing signing-info $(junctiond tendermint show-validator) 
 ```
-sudo systemctl enable babylond
-```
 
-**DISABLE SERVICE**
+### Governance <a href="#governance" id="governance"></a>
 
-```
-sudo systemctl disable babylond
-```
+TitleDescriptionDeposit, amf
 
-**START SERVICE**
+Create New Text Proposal
 
-```
-sudo systemctl start babylond
+```bash
+junctiond  tx gov submit-proposal \
+--title "" \
+--description "" \
+--deposit 1000000amf \
+--type Text \
+--from $WALLET \
+--fees 200amf \
+-y 
 ```
 
-**STOP SERVICE**
+Proposals List
 
+```bash
+junctiond query gov proposals 
 ```
-sudo systemctl stop babylond
-```
-
-**RESTART SERVICE**
 
-```
-sudo systemctl restart babylond
-```
+Proposal IDProposal optionYesNoNo with vetoAbstain
 
-**CHECK SERVICE STATUS**
+View proposal
 
+```bash
+junctiond query gov proposal 1 
 ```
-sudo systemctl status babylond
-```
 
-**CHECK SERVICE LOGS**
+Vote
 
-```
-sudo journalctl -u babylond -f --no-hostname -o cat
+```bash
+junctiond tx gov vote 1 yes --from $WALLET --chain-id junction  --fees 200amf -y 
 ```
