@@ -2,15 +2,9 @@
 coverY: 0
 ---
 
-# 🚀 BABYLON
+# 🚀 AIRCHAINS
 
-![](https://raw.githubusercontent.com/kj89/cosmos-images/main/logos/babylon.png)
 
-Babylon is a PoS (proof-of-stake) blockchain that provides secure Bitcoin timestamps to its transactions. Babylon is built using the Tendermint consensus engine and Cosmos SDK.
-
-| Chain ID   | Latest Version Tag | Wasm |
-| ---------- | ------------------ | ---- |
-| bbn-test-2 | v0.7.2             | ON   |
 
 [Website](https://babylonchain.io/) | [Discord](https://discord.gg/babylonglobal) | [Twitter](https://twitter.com/babylon\_chain)
 
@@ -18,13 +12,13 @@ Subscribe to our free [🤖 Testnet Proposal Bot](https://t.me/kjnodes\_testnet\
 
 ### Chain explorer <a href="#chain-explorer" id="chain-explorer"></a>
 
-[https://explorer.kjnodes.com/babylon-testnet](https://explorer.kjnodes.com/babylon-testnet)
+
 
 ### Public endpoints <a href="#public-endpoints" id="public-endpoints"></a>
 
-* api: [https://babylon-testnet.api.kjnodes.com](https://babylon-testnet.api.kjnodes.com/)
-* rpc: [https://babylon-testnet.rpc.kjnodes.com](https://babylon-testnet.rpc.kjnodes.com/)
-* grpc: babylon-testnet.grpc.kjnodes.com:16490
+* api:&#x20;
+* rpc:&#x20;
+* grpc:
 
 ### Peering <a href="#peering" id="peering"></a>
 
