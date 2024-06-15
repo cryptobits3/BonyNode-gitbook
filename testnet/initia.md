@@ -6,6 +6,23 @@ description: 'Initia: The Initiation Report'
 
 <figure><img src="https://resource.xangle.io/images/content/common/-01-e0043d13-a6b8-4ecc-b59f-9cc4505406de.jpg" alt=""><figcaption></figcaption></figure>
 
+website ⚡️[https://initia.xyz/](https://initia.xyz/)\
+TESTNET ⚡️ [app.testnet.initia.xyz/xp](http://app.testnet.initia.xyz/xp) - LNDEQC85\
+SERVICE ⚡️ [https://main.bonynode.online/services/testnet/initia/](https://main.bonynode.online/services/testnet/initia/)\
+EXPLORER ⚡️ [scan.testnet.initia.xyz/initiation-1/](http://scan.testnet.initia.xyz/initiation-1/)
+
+rpc ⚡️ [https://initia-testnet-rpc.bonynode.online/](https://initia-testnet-rpc.bonynode.online/)
+
+rest ⚡️[ https://initia-testnet-api.bonynode.online/](https://initia-testnet-api.bonynode.online/)
+
+Genesis ⚡️- [https://testnet-files.bonynode.online/initia/genesis.json](https://testnet-files.bonynode.online/initia/genesis.json)
+
+Snapshot⚡️ [https://testnet-files.bonynode.online/initia/snap\_initia.tar.lz4](https://testnet-files.bonynode.online/initia/snap\_initia.tar.lz4)
+
+Addrbook ⚡️ [https://testnet-files.bonynode.online/initia/addrbook.json](https://testnet-files.bonynode.online/initia/addrbook.json)
+
+rpc scanner ⚡️ [https://main.bonynode.online/services/testnet/initia/public-rpc/](https://main.bonynode.online/services/testnet/initia/public-rpc/)
+
 ### Table of Contents <a href="#table-of-contents" id="table-of-contents"></a>
 
 #### 1. History repeats itself: the OS war
