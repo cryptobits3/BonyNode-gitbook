@@ -6,9 +6,9 @@ description: 'Initia: The Initiation Report'
 
 <figure><img src="https://resource.xangle.io/images/content/common/-01-e0043d13-a6b8-4ecc-b59f-9cc4505406de.jpg" alt=""><figcaption></figcaption></figure>
 
-website ⚡️[https://initia.xyz/](https://initia.xyz/)\
-TESTNET ⚡️ [app.testnet.initia.xyz/xp](http://app.testnet.initia.xyz/xp) - LNDEQC85\
-EXPLORER ⚡️ [scan.testnet.initia.xyz/initiation-1/](http://scan.testnet.initia.xyz/initiation-1/)\
+Website ⚡️[https://initia.xyz/](https://initia.xyz/)\
+Testnet ⚡️ [app.testnet.initia.xyz/xp](http://app.testnet.initia.xyz/xp) - LNDEQC85\
+Explorer ⚡️ [scan.testnet.initia.xyz/initiation-1/](http://scan.testnet.initia.xyz/initiation-1/)\
 \
 \
 SERVICE NODE ⚡️ [https://main.bonynode.online/services/testnet/initia/](https://main.bonynode.online/services/testnet/initia/)
@@ -19,9 +19,9 @@ rest ⚡️[ https://initia-testnet-api.bonynode.online/](https://initia-testnet
 
 Genesis ⚡️- [https://testnet-files.bonynode.online/initia/genesis.json](https://testnet-files.bonynode.online/initia/genesis.json)
 
-Snapshot⚡️ [https://testnet-files.bonynode.online/initia/snap\_initia.tar.lz4](https://testnet-files.bonynode.online/initia/snap\_initia.tar.lz4)
+snapshot⚡️ [https://testnet-files.bonynode.online/initia/snap\_initia.tar.lz4](https://testnet-files.bonynode.online/initia/snap\_initia.tar.lz4)
 
-Addrbook ⚡️ [https://testnet-files.bonynode.online/initia/addrbook.json](https://testnet-files.bonynode.online/initia/addrbook.json)
+addrbook ⚡️ [https://testnet-files.bonynode.online/initia/addrbook.json](https://testnet-files.bonynode.online/initia/addrbook.json)
 
 rpc scanner ⚡️ [https://main.bonynode.online/services/testnet/initia/public-rpc/](https://main.bonynode.online/services/testnet/initia/public-rpc/)
 
