@@ -8,8 +8,10 @@ description: 'Initia: The Initiation Report'
 
 website ⚡️[https://initia.xyz/](https://initia.xyz/)\
 TESTNET ⚡️ [app.testnet.initia.xyz/xp](http://app.testnet.initia.xyz/xp) - LNDEQC85\
-SERVICE ⚡️ [https://main.bonynode.online/services/testnet/initia/](https://main.bonynode.online/services/testnet/initia/)\
-EXPLORER ⚡️ [scan.testnet.initia.xyz/initiation-1/](http://scan.testnet.initia.xyz/initiation-1/)
+EXPLORER ⚡️ [scan.testnet.initia.xyz/initiation-1/](http://scan.testnet.initia.xyz/initiation-1/)\
+\
+\
+SERVICE NODE ⚡️ [https://main.bonynode.online/services/testnet/initia/](https://main.bonynode.online/services/testnet/initia/)
 
 rpc ⚡️ [https://initia-testnet-rpc.bonynode.online/](https://initia-testnet-rpc.bonynode.online/)
 
