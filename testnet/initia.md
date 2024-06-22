@@ -9,7 +9,7 @@ description: 'Initia: Overview'
 Website ⚡️[https://initia.xyz/](https://initia.xyz/)\
 Testnet ⚡️ [app.testnet.initia.xyz/xp](http://app.testnet.initia.xyz/xp) - LNDEQC85\
 Explorer ⚡️ [scan.testnet.initia.xyz/initiation-1/](http://scan.testnet.initia.xyz/initiation-1/)\
-\
+Validator ⚡️ [https://scan.testnet.initia.xyz/initiation-1/validators/initvaloper13nwzm5dfd26ue74jr6sc39gyn3qze0rjahfguc](https://scan.testnet.initia.xyz/initiation-1/validators/initvaloper13nwzm5dfd26ue74jr6sc39gyn3qze0rjahfguc)\
 \
 SERVICE NODE ⚡️ [https://main.bonynode.online/services/testnet/initia/](https://main.bonynode.online/services/testnet/initia/)
 
@@ -115,14 +115,14 @@ Example: An esports platform can use Initia to verify and transfer ownership of 
 
 ### 6. Broader Adoption and Ecosystem Growth <a href="#id-6.-broader-adoption-and-ecosystem-growth" id="id-6.-broader-adoption-and-ecosystem-growth"></a>
 
-For Initia to realize its full potential, broader adoption across various industries is essential. By fostering partnerships and collaborations, Initia can expand its ecosystem, attracting more developers, users, and businesses to its platform.   Experience Initia’s features to get the sense of the future of blockchain:  [InitiaScan](https://scan.initia.tech/initiation-1): A multi-chain explorer with VM-specific tools and information. Bridget: A frontend bridge/on-ramp aggregator integrated directly into rollups. [Initia App](https://app.testnet.initia.xyz/): A centralized platform for all things related to Initia. [Initia Usernames](https://usernames.testnet.initia.xyz/): A blockchain-wide on-chain identity system. [Initia Wallet](https://chromewebstore.google.com/detail/initia-wallet/ffbceckpkpbcmgiaehlloocglmijnpmp): A dedicated wallet designed for navigating the expansive Initia ecosystem. [Initia Bridge](https://bridge.testnet.initia.xyz/): Secure bridge to tranfers assets between multiple chains
-
-[Website](https://initia.xyz/) | [Discord](https://discord.gg/initia) | [Twitter](https://x.com/initiaFDN) | [Documents](https://docs.initia.xyz/)
-
-### 7. Conclusion <a href="#id-7.-conclusion" id="id-7.-conclusion"></a>
+For Initia to realize its full potential, broader adoption across various industries is essential. By fostering partnerships and collaborations, Initia can expand its ecosystem, attracting more developers, users, and businesses to its platform.   Experience Initia’s features to get the sense of the future of blockchain: \
+&#x20;[InitiaScan](https://scan.initia.tech/initiation-1): A multi-chain explorer with VM-specific tools and information. Bridget: A frontend bridge/on-ramp aggregator integrated directly into rollups. \
+[Initia App](https://app.testnet.initia.xyz/): A centralized platform for all things related to Initia. \
+[Initia Usernames](https://usernames.testnet.initia.xyz/): A blockchain-wide on-chain identity system. \
+[Initia Wallet](https://chromewebstore.google.com/detail/initia-wallet/ffbceckpkpbcmgiaehlloocglmijnpmp): A dedicated wallet designed for navigating the expansive Initia ecosystem. [Initia Bridge](https://bridge.testnet.initia.xyz/): Secure bridge to tranfers assets between multiple chains\
+\
+7\. Conclusion
 
 Initia is poised to transform the blockchain landscape with its innovative approach to interoperability and interwoven rollup solution. By enabling seamless cross-chain interactions, providing a robust and scalable platform, and fostering a vibrant community, Initia is well-positioned to drive the next wave of blockchain innovation. As the platform continues to evolve and expand, it will undoubtedly play a crucial role in the growth and adoption of blockchain technology across various industries.
 
-
-
-\
+&#x20;                                     [Website](https://initia.xyz/) | [Discord](https://discord.gg/initia) | [Twitter](https://x.com/initiaFDN) | [Documents](https://docs.initia.xyz/)
