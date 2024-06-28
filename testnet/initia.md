@@ -6,6 +6,8 @@ description: 'Initia: Overview'
 
 <figure><img src="../.gitbook/assets/GQctLrmaIAQb5TT (1).jpeg" alt=""><figcaption></figcaption></figure>
 
+<figure><img src="../.gitbook/assets/week6.jpg" alt=""><figcaption></figcaption></figure>
+
 Website ⚡️[https://initia.xyz/](https://initia.xyz/)\
 Testnet ⚡️ [app.testnet.initia.xyz/xp](http://app.testnet.initia.xyz/xp) - LNDEQC85\
 Explorer ⚡️ [scan.testnet.initia.xyz/initiation-1/](http://scan.testnet.initia.xyz/initiation-1/)\
