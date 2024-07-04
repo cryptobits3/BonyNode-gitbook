@@ -28,15 +28,14 @@ snapshot⚡️ [https://testnet-files.bonynode.online/initia/snap\_initia.tar.lz
 addrbook ⚡️ [https://testnet-files.bonynode.online/initia/addrbook.json](https://testnet-files.bonynode.online/initia/addrbook.json)
 
 rpc scanner ⚡️ [https://main.bonynode.online/services/testnet/initia/public-rpc/](https://main.bonynode.online/services/testnet/initia/public-rpc/)\
+\
 Understanding Initia
 
 Initia is designed to address the existing fragmented problem and at the same time remain the power of interoperability, scalability, security and flexibility. Built on CosmosSDK with Tendermint/CometBFT consensus mechanism. It enables seamless interaction between different blockchain networks, facilitating a more connected and efficient decentralized ecosystem. Initia's unique architecture includes the Initia Virtual Machine (InitiaVM) and robust cross-rollup transaction capabilities, ensuring high performance and scalability.
 
 Complete architecture of Omnitia
 
-<figure><img src="https://services.validatorvn.com/~gitbook/image?url=https%3A%2F%2F2152875891-files.gitbook.io%2F%7E%2Ffiles%2Fv0%2Fb%2Fgitbook-x-prod.appspot.com%2Fo%2Fspaces%252FFeDLMVe8nSBmpElrBAEm%252Fuploads%252FLePZzL9EqvcTtVZmWQsj%252Finitia.jpg%3Falt%3Dmedia%26token%3D9cb55b8a-8a0e-4d1a-ad4c-ca3b57933cc7&#x26;width=768&#x26;dpr=4&#x26;quality=100&#x26;sign=6cd6cc9a50150cd1c42ad067e6a95d9991673d9f1a79fc777ed92a05f2181a2b" alt=""><figcaption></figcaption></figure>
-
-#### &#x20;Initia Virtual Machine (InitiaVM) <a href="#id-1.1-initia-virtual-machine-initiavm" id="id-1.1-initia-virtual-machine-initiavm"></a>
+Initia Virtual Machine (InitiaVM)
 
 The InitiaVM is a specialized virtual machine that enhances the execution of smart contracts. It is optimized for cross-chain interactions, ensuring that transactions are executed smoothly across different blockchain networks. The InitiaVM supports multiple programming languages, providing developers with the flexibility to write smart contracts in their preferred language.
 
@@ -161,8 +160,6 @@ The Layer 1 built on the Cosmos SDK, using CometBFT for consensus and integratin
 ### Minitia (Layer 2) <a href="#id-5436" id="id-5436"></a>
 
 The Layer 2 infrastructure consists of Minitias, high-performance application chains designed for scalability and throughput, operating with the VM-Agnostic Optimistic Rollup framework.
-
-<figure><img src="https://miro.medium.com/v2/resize:fit:1260/0*ImRjDcpA6T9ywQgN" alt="" height="394" width="700"><figcaption><p>Minitia</p></figcaption></figure>
 
 **The OPinit Stack**
 
