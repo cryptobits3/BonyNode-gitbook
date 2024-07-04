@@ -1,6 +1,7 @@
 # Table of contents
 
-* [👽 BonyNode Explorer](https://bonynode.online/)
+* [👽 BonyNode NEW SERVICE!](https://bonynode.online/)
+* [🌄 BonyNode Explorer](https://bonynode.online/)
 * [💸 Supported IBC Relayers](https://relayers.smartstake.io/relayer/)
 * [💚 Supported Chains](README.md)
 * [🧙‍♀️ Monitoring Tools](monitoring-tools.md)
